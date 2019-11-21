@@ -38,32 +38,29 @@
 						</a>
 
 						<ul class="main-navigation js-main-nav" role="menubar">
-							<li >
+							<li class="{{ homeActive }}">
 								<a href="{% url 'index' %}">Главная</a>
 							</li>
-							<li class="current-menu-item">
-								<a href="#">О нас</a>
+							<li class="{{ aboutActive }}">
+								<a href="{% url 'about' %}">О нас</a>
 							</li>
-							<li class="menu-item-has-children">
+							<li class="menu-item-has-children {{ serviceActive }}">
 								<a href="#">Услуги</a>
 								<ul class="sub-menu">
+                                    {% for service in allSevices %}
 									<li>
-										<a href="#">Название услуги</a>
+										<a href="{% url 'service' service.nameSlug %}">{{ service.name }}</a>
 									</li>
-									<li>
-										<a href="#">Название услуги</a>
-									</li>
-									<li>
-										<a href="#">Название услуги</a>
-									</li>
+                                    {% endfor %}
+
 
 								</ul>
 							</li>
-							<li>
-								<a href="#">Проекты</a>
+							<li class="{{ projectsActive }}">
+								<a href="{% url 'projects' %}">Проекты</a>
 							</li>
-							<li>
-								<a href="#">Контакты</a>
+							<li class="{{ contactsActive }}">
+								<a href="{% url 'contacts' %}">Контакты</a>
 							</li>
 
 						</ul>
@@ -112,7 +109,7 @@
 					</div><!-- /.jumbotron__widgets -->
 
 					<div class="header__featured-link">
-						<a class="btn btn-primary" target="_self" href="№">Задайте вопрос</a>
+						<a class="btn btn-primary" target="_self" href="{% url 'contacts' %}">Задайте вопрос</a>
 					</div>
 
 				</div><!-- /.container -->

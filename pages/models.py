@@ -29,18 +29,18 @@ class Service(models.Model):
     description = RichTextUploadingField('Полное описание услуги', blank=False, null=True)
     isHomeVisible = models.BooleanField('Отображать на главной?', default=True, db_index=True)
     nameSlug = models.CharField(max_length=255, blank=True, null=True)
-    image = models.ImageField('Изображение превью для главной (360 x 240)', upload_to='service_img/', blank=True)
-    pageH1 = models.CharField('Тег H1', max_length=255, blank=False, null=True)
-    pageTitle = models.CharField('Название страницы SEO', max_length=255, blank=False, null=True)
-    pageDescription = models.CharField('Описание страницы SEO', max_length=255, blank=False, null=True)
-    pageKeywords = models.TextField('Keywords SEO', blank=False, null=True)
+    image = models.ImageField('Изображение превью для главной (360 x 240)', upload_to='service_img/', blank=False)
+    pageH1 = models.CharField('Тег H1', max_length=255, blank=True, null=True)
+    pageTitle = models.CharField('Название страницы SEO', max_length=255, blank=True, null=True)
+    pageDescription = models.CharField('Описание страницы SEO', max_length=255, blank=True, null=True)
+    pageKeywords = models.TextField('Keywords SEO', blank=True, null=True)
     views = models.IntegerField('Просмотров', default=0)
     isActive = models.BooleanField('Активная услуга?', default=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
         slug = slugify(self.name)
-        testSlug = Service.objects.filter(name_slug=slug)
+        testSlug = Service.objects.filter(nameSlug=slug)
         slugRandom = ''
         if testSlug:
             slugRandom = '-' + ''.join(choices(string.ascii_lowercase + string.digits, k=2))

@@ -1,0 +1,90 @@
+{% extends  'basic.html' %}
+{% load static %}
+
+{% block title %}
+    {{ block.super }} - {{ curService.name }}
+{% endblock %}
+
+{% block keywords %}
+    {{ block.super }}
+{% endblock %}
+
+{% block description %}
+    {{ block.super }}
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+{% endblock %}
+
+
+
+{% block content %}
+    <div class="page-header">
+			<div class="container">
+				<h1 class="page-header__title  display-1">{{ curService.name }}</h1>
+			</div>
+		</div><!-- /.page-header -->
+
+		<div class="breadcrumbs">
+
+			<div class="container">
+
+				<span typeof="v:Breadcrumb">
+					<a rel="v:url" property="v:title" title="Go to StructurePress." href="{% url 'index' %}" class="home">Главная</a>
+				</span>
+				<span typeof="v:Breadcrumb">
+					<span property="v:title">{{ curService.name }}</span>
+				</span>
+
+			</div><!-- /.container -->
+
+		</div><!-- /.breadcrumbs -->
+
+		<div class="container margin-bottom-30">
+
+			<div class="row">
+
+				<main id="main" class="site-main  col-xs-12  col-lg-9  col-lg-push-3" role="main">
+
+					<div class="row margin-bottom-30">
+
+						<div class="col-md-12">
+
+							{{ curService.description | safe }}
+
+						</div><!-- /.col -->
+
+
+
+					</div><!-- /.row -->
+
+				</main>
+
+				<div class="col-xs-12  col-lg-3  col-lg-pull-9">
+
+					<div class="sidebar widget widget_nav_menu" role="complementary">
+
+						<ul class="menu">
+							{% for service in allSevices %}
+                               <li {% if service.nameSlug == curService.nameSlug %}class="current-menu-item"{% endif %}>
+								    <a href="{% url 'service' service.nameSlug %}">{{ service.name }}</a>
+							    </li>
+                            {% endfor %}
+
+
+						</ul>
+
+					</div><!-- /.sidebar -->
+
+				</div><!-- /.col -->
+
+			</div><!-- /.row -->
+
+		</div><!-- /.container -->
+
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+{% endblock %}

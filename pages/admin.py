@@ -3,7 +3,7 @@ from .models import *
 
 class ServiceNameAdmin(admin.ModelAdmin):
 
-    exclude = ['name_slug']
+    exclude = ['nameSlug','views']
 
     class Meta:
         model = Service
