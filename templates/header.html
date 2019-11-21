@@ -1,0 +1,122 @@
+{% load static %}
+	<header>
+			<div class="top">
+				<div class="container top__container">
+
+
+					<nav class="top__menu" aria-label="Top Menu">
+						<ul class="top-navigation js-dropdown">
+							<li>
+								<a href="#">Услуги ПТО</a>
+							</li>
+							<li>
+								<a href="#">Исполнительная документация</a>
+							</li>
+						</ul>
+					</nav>
+				</div><!-- /.top__container -->
+			</div><!-- /.top -->
+
+			<div class="header">
+				<div class="container">
+
+					<div class="header__logo">
+						<a href="{% url 'index' %}">
+							<img src="images/logo.png" alt="StructurePress" srcset="images/logo.png, images/logo@2x.png 2x" class="img-fluid" width="269" height="70">
+						</a>
+					</div>
+
+					<button class="btn btn-primary header__navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#structurepress-main-navigation">
+						<i class="fa fa-bars hamburger"></i>
+
+					</button>
+
+					<nav class="header__navigation collapse navbar-toggleable-md" id="structurepress-main-navigation" aria-label="Main Menu">
+
+						<a class="home-icon" href="{% url 'index' %}">
+							<i class="fa fa-home"></i>
+						</a>
+
+						<ul class="main-navigation js-main-nav" role="menubar">
+							<li >
+								<a href="{% url 'index' %}">Главная</a>
+							</li>
+							<li class="current-menu-item">
+								<a href="#">О нас</a>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#">Услуги</a>
+								<ul class="sub-menu">
+									<li>
+										<a href="#">Название услуги</a>
+									</li>
+									<li>
+										<a href="#">Название услуги</a>
+									</li>
+									<li>
+										<a href="#">Название услуги</a>
+									</li>
+
+								</ul>
+							</li>
+							<li>
+								<a href="#">Проекты</a>
+							</li>
+							<li>
+								<a href="#">Контакты</a>
+							</li>
+
+						</ul>
+
+					</nav>
+
+					<div class="jumbotron__widgets hidden-lg-up">
+
+						<div class="widget">
+							<div class="icon-box">
+								<i class="fa fa-phone"></i>
+								<div class="icon-box__text">
+									<h4 class="icon-box__title">Телефон:</h4>
+									<span class="icon-box__subtitle">8-800-506-266</span>
+								</div>
+							</div><!-- /.icon-box -->
+						</div><!-- /.widget-icon-box -->
+
+						<div class="widget">
+							<div class="icon-box">
+								<i class="fa fa-clock-o"></i>
+								<div class="icon-box__text">
+									<h4 class="icon-box__title">Время работы:</h4>
+									<span class="icon-box__subtitle">ПН - ПТ: 7.00 - 18:00</span>
+								</div>
+							</div><!-- /.icon-box -->
+						</div><!-- /.widget-icon-box -->
+
+						<div class="widget">
+							<div class="icon-box">
+								<i class="fa fa-envelope-o"></i>
+								<div class="icon-box__text">
+									<h4 class="icon-box__title">E-mail:</h4>
+									<span class="icon-box__subtitle">info[at]structure.com</span>
+								</div>
+							</div><!-- /.icon-box -->
+						</div>
+
+						<div class="widget">
+							<a class="social-icons__link" href="https://www.facebook.com/ProteusThemes/" target="_self">
+								<i class="fa fa-whatsapp-"></i>
+							</a>
+
+						</div>
+
+					</div><!-- /.jumbotron__widgets -->
+
+					<div class="header__featured-link">
+						<a class="btn btn-primary" target="_self" href="№">Задайте вопрос</a>
+					</div>
+
+				</div><!-- /.container -->
+
+			</div><!-- /.header -->
+
+		</header>

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- SKIBORG WAS HERE -->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/cropped-favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="images/cropped-favicon-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="images/cropped-favicon-180x180.png">
+    <meta name="msapplication-TileImage" content="images/cropped-favicon-270x270.png">
+    <title>{% block title %}  {% endblock %} </title>
+    <meta name="keywords" content="{% block keywords %}  {% endblock %}">
+    <meta name="description" content="{% block description %}  {% endblock %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A700%7COpen+Sans%3A400%2C700&amp;subset=latin" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/featherlight.css' %}" type="text/css" media="all">
+
+</head>
+<body class="home">
+
+<div class="boxed-container">
+{% include 'header.html' %}
+    {% block content %}
+    {% endblock %}
+{% include 'footer.html' %}
+</div><!-- /.boxed-container -->
+
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/modernizr.custom.js' %}"></script>
+<script src="{% static 'js/picturefill.min.js' %}"></script>
+<script src="{% static 'js/underscore.js' %}"></script>
+<script src="{% static 'js/featherlight.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
