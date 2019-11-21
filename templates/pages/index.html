@@ -36,7 +36,7 @@
 									</p>
 									<p>
 										<a class="btn btn-primary" href="{{ banner.buttonUrl }}" target="_self">{{ banner.buttonText | upper}}</a>
-										<a class="btn btn-tertiary" href="services.html" target="_self">НАШИ УСЛУГИ</a>
+										<a class="btn btn-tertiary" href="{% url 'projects' %}" target="_self">Проекты</a>
 									</p>
 								</div><!-- /.jumbotron-content__description -->
 							</div><!-- /.jumbotron-content -->
@@ -115,15 +115,15 @@
                     {% for service in allSevices %}
 				    	<div class="col-lg-4 page-box--block">
 
-						<a class="page-box__picture" href="green-building.html">
+						<a class="page-box__picture" href="{% url 'service' service.nameSlug %}">
 							<img src="{{ service.image.url }}" width="360" height="240" srcset="{{ service.image.url }} 360w, {{ service.image.url }} 840w" sizes="(min-width: 992px) 360px, calc(100vw - 30px)" alt="{{ service.name }}">
 						</a>
 						<div class="page-box__content">
-							<h4 class="page-box__title"><a href="green-building.html">{{ service.name }}</a></h4>
+							<h4 class="page-box__title"><a href="{% url 'service' service.nameSlug %}">{{ service.name }}</a></h4>
 							<p class="page-box__text">
                                 {{ service.short_description }}
 							</p>
-							<a href="green-building.html" class="page-box__more-link">Подробнее</a>
+							<a href="{% url 'service' service.nameSlug %}" class="page-box__more-link">Подробнее</a>
 						</div>
 
 					</div><!-- /.col -->
@@ -338,8 +338,8 @@
 {#							</p>#}
 						</div>
 						<div class="call-to-action__button">
-							<a class="btn btn-primary" href="contact.html" target="_self">Прайс</a>
-							<a class="btn btn-secondary" href="#" target="_self">Проекты</a>
+							<a class="btn btn-primary" href="{% url 'contacts' %}" target="_self">Прайс</a>
+							<a class="btn btn-secondary" href="{% url 'projects' %}" target="_self">Проекты</a>
 						</div>
 					</div><!-- /.col -->
 
