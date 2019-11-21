@@ -1,6 +1,21 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages
 from .models import *
+from .forms import *
+
+def callback(request):
+    if request.POST:
+        req = request.POST
+        form = CallbackForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Спасибо, форма успешно отправлена')
+            return HttpResponseRedirect('/contacts/')
+    else:
+        form = CallbackForm()
+    return render(request, 'pages/contacts.html', locals())
+
 def index(request):
     allBanners = Banner.objects.filter(isActive=True).order_by('order')
     allSevices = Service.objects.filter(isHomeVisible=True)
@@ -20,6 +35,7 @@ def projects(request):
 def contacts(request):
     allSevices = Service.objects.filter(isHomeVisible=True)
     contactsActive = 'current-menu-item'
+    form = CallbackForm()
     return render(request, 'pages/contacts.html', locals())
 
 def service(request, slug):

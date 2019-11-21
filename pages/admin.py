@@ -10,3 +10,4 @@ class ServiceNameAdmin(admin.ModelAdmin):
 admin.site.register(Service,ServiceNameAdmin)
 admin.site.register(Project)
 admin.site.register(Banner)
+admin.site.register(Callback)
