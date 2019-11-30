@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block title %}
-    {{ block.super }} - Контакты
+    {{ pageTitle }}
 {% endblock %}
 
 {% block keywords %}
-    {{ block.super }}
+    {{ pageKeywords }}
 {% endblock %}
 
 {% block description %}
-    {{ block.super }}
+    {{ pageDescription }}
 {% endblock %}
 
 {% block css %}
@@ -27,7 +27,7 @@
         </div>
     </div><!-- /.page-header -->
 
-    <div class="breadcrumbs margin-bottom-0">
+    <div class="breadcrumbs ">
 
         <div class="container">
 
@@ -42,8 +42,6 @@
 
     </div><!-- /.breadcrumbs -->
 
-    <section class="map margin-bottom-60" data-type="" data-zoom="12"></section>
-
     <div class="container">
 
         <div class="row margin-bottom-100">
@@ -53,7 +51,7 @@
                 <div class="card">
 
                     <div class="card-block contact-profile__container">
-                        <div class="contact-profile__social-icons">
+                     <!--   <div class="contact-profile__social-icons">
                             <a class="contact-profile__social-icon" href="https://www.facebook.com/ProteusThemes/" target="_self">
                                 <i class="fa fa-facebook-square"></i>
                             </a>
@@ -66,7 +64,7 @@
                             <a class="contact-profile__social-icon" href="https://github.com/chillyorange" target="_self">
                                 <i class="fa fa-github-square"></i>
                             </a>
-                        </div><!-- /.contact-profile__social-icons -->
+                        </div> /.contact-profile__social-icons -->
                         <div class="contact-profile__items">
                             <div class="contact-profile__item">
                                 <div class="contact-profile__icon">
@@ -81,12 +79,12 @@
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <p class="contact-profile__text">
-                                    +7 (977) 301-71-88
+                                    +7 (968) 490-71-30
                                 </p>
                             </div>
                             <div class="contact-profile__item">
                                 <div class="contact-profile__icon">
-                                    <i class="fa fa-whatsapp"></i>
+                                    <i class="fa fa-phone"></i>
                                 </div>
                                 <p class="contact-profile__text">
                                     +7 (977) 301-71-88

@@ -36,7 +36,7 @@
 									</p>
 									<p>
 										<a class="btn btn-primary" href="{{ banner.buttonUrl }}" target="_self">{{ banner.buttonText | upper}}</a>
-										<a class="btn btn-tertiary" href="{% url 'projects' %}" target="_self">Проекты</a>
+										<a class="btn btn-tertiary" href="{% url 'services' %}" target="_self">Услуги</a>
 									</p>
 								</div><!-- /.jumbotron-content__description -->
 							</div><!-- /.jumbotron-content -->
@@ -87,15 +87,15 @@
 									<i class="fa fa-envelope-o"></i>
 									<div class="icon-box__text">
 										<h4 class="icon-box__title">E-mail:</h4>
-										<span class="icon-box__subtitle">info[at]structure.com</span>
+										<span class="icon-box__subtitle">pto-moscow@yandex.ru</span>
 									</div>
 								</div><!-- /.icon-box -->
 							</div>
 
-							<div class="widget">
+							<!--div class="widget">
 								<a class="social-icons__link" href="https://www.facebook.com/ProteusThemes/" target="_self"><i class="fa fa-whatsapp"></i></a>
 
-							</div>
+							</div -->
 
 						</div><!-- /.jumbotron__widgets -->
 
@@ -477,27 +477,35 @@
 					<div class="col-md-12">
 
 						<h3 class="widget-title"><span>Наши заказчики</span></h3>
-						<div class="logo-panel">
-							<div class="row" style="display: flex; align-items: center">
-								<div class="col-xs-12 col-sm-4 col-lg-2">
-									<img src="{% static 'images/parnter1.png' %}" alt="Client logo">
-								</div>
-								<div class="col-xs-12  col-sm-4  col-lg-2">
+					
+							<div class="owl-carousel">
+                                    <div style="    height: 250px;   display: flex; align-items: center;">
+                                        <img src="{% static 'images/parnter1.png' %}" alt="Client logo">
+                                    </div>
+
+        <div style="    height: 250px;   display: flex; align-items: center;">
 									<img src="{% static 'images/partner2.jpg' %}" alt="Client logo">
-								</div>
-								<div class="col-xs-12  col-sm-4  col-lg-2">
+                 </div>
+        <div style="    height: 250px;   display: flex; align-items: center;">
 									<img src="{% static 'images/partner3.png' %}" alt="Client logo">
-								</div>
-								<div class="col-xs-12  col-sm-4  col-lg-2">
+                 </div>
+        <div style="    height: 250px;   display: flex; align-items: center;">
 									<img src="{% static 'images/partner4.png' %}" alt="Client logo">
-								</div>
-								<div class="col-xs-12  col-sm-4  col-lg-2">
+                 </div>
+        <div style="    height: 250px;   display: flex; align-items: center;">
 									<img src="{% static 'images/partner5.jpg' %}" alt="Client logo">
-								</div>
-								<div class="col-xs-12  col-sm-4  col-lg-2">
+                 </div>
+        <div style="    height: 250px;   display: flex; align-items: center;">
 									<img src="{% static 'images/partner6.png' %}" alt="Client logo">
+                 </div>
+                 <div style="    height: 250px;   display: flex; align-items: center;">
+                                	<img src="{% static 'images/partner7.png' %}" alt="Client logo">
+                          </div>
+                             <div style="    height: 250px;   display: flex; align-items: center;">
+                                	<img src="{% static 'images/partner8.png' %}" alt="Client logo">
+                                      </div>
 								</div>
-							</div><!-- /.row -->
+
 						</div><!-- /.logo-panel -->
 
 					</div><!-- /.col -->
@@ -507,6 +515,8 @@
 			</div><!-- /.container -->
 
 		</section><!-- /.partners -->
+
+
 
 {% endblock %}
 

@@ -9,13 +9,20 @@
     <link rel="icon" href="images/cropped-favicon-192x192.png" sizes="192x192">
     <link rel="apple-touch-icon-precomposed" href="images/cropped-favicon-180x180.png">
     <meta name="msapplication-TileImage" content="images/cropped-favicon-270x270.png">
-    <title>{% block title %} Услуги ПТО {% endblock %} </title>
-    <meta name="keywords" content="{% block keywords %}  {% endblock %}">
-    <meta name="description" content="{% block description %}  {% endblock %}"/>
+    <title>{% block title %}  {{ pageTitle }} {% endblock %} </title>
+    <meta name="keywords" content="{% block keywords %}  {{ pageKeywords }} {% endblock %}">
+    <meta name="description" content="{% block description %} {{ pageDescription }} {% endblock %}"/>
+    {% if seotag.yandexTAG %}
+        {{ seotag.yandexTAG |safe }}
+    {% endif %}
+    {% if seotag.googleTAG %}
+        {{ seotag.googleTAG |safe }}
+    {% endif %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A700%7COpen+Sans%3A400%2C700&amp;subset=latin" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css" media="all">
+   <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}" type="text/css" media="all">
     <link rel="stylesheet" href="{% static 'css/featherlight.css' %}" type="text/css" media="all">
-
 </head>
 <body class="home">
 
@@ -25,14 +32,36 @@
     {% endblock %}
 {% include 'footer.html' %}
 </div><!-- /.boxed-container -->
-
-
-<script src="{% static 'js/jquery.js' %}"></script>
+{% if seotag.yandexMetrika %}
+{{ seotag.yandexMetrika |safe }}
+{% endif %}
+{% if seotag.fbPixel %}
+{{ seotag.fbPixel |safe }}
+{% endif %}
+<script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'js/modernizr.custom.js' %}"></script>
 <script src="{% static 'js/picturefill.min.js' %}"></script>
 <script src="{% static 'js/underscore.js' %}"></script>
 <script src="{% static 'js/featherlight.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
-
+ <script>
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+    </script>
 </body>
 </html>

@@ -24,16 +24,17 @@ class Banner(models.Model):
 
 
 class Service(models.Model):
-    name = models.CharField('Название услуги', max_length=40, blank=False, null=True)
+    name = models.CharField('Название услуги', max_length=255, blank=False, null=True)
     short_description = models.TextField('Краткое описание (380 символов)', blank=False)
     description = RichTextUploadingField('Полное описание услуги', blank=False, null=True)
     isHomeVisible = models.BooleanField('Отображать на главной?', default=True, db_index=True)
     nameSlug = models.CharField(max_length=255, blank=True, null=True)
-    image = models.ImageField('Изображение превью для главной (360 x 240)', upload_to='service_img/', blank=False)
+    image = models.ImageField('Изображение превью (360 x 240)', upload_to='service_img/', blank=False)
     pageH1 = models.CharField('Тег H1', max_length=255, blank=True, null=True)
     pageTitle = models.CharField('Название страницы SEO', max_length=255, blank=True, null=True)
     pageDescription = models.CharField('Описание страницы SEO', max_length=255, blank=True, null=True)
     pageKeywords = models.TextField('Keywords SEO', blank=True, null=True)
+    price = models.IntegerField('Стоимость услуги', default=0)
     views = models.IntegerField('Просмотров', default=0)
     isActive = models.BooleanField('Активная услуга?', default=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -60,10 +61,10 @@ class Service(models.Model):
 
 
 class Project(models.Model):
-    name = models.CharField('Название проекта (30 символов)', max_length=30, blank=False, null=True)
+    name = models.CharField('Название проекта ', max_length=255, blank=False, null=True)
     image = models.ImageField('Изображение (360 x 240)', upload_to='service_img/', blank=True)
-    customer = models.CharField('Заказчик', max_length=40, blank=False, null=True)
-    town = models.CharField('Город', max_length=40, blank=False, null=True)
+    customer = models.CharField('Заказчик', max_length=40, blank=True, null=True)
+    town = models.CharField('Город', max_length=40, blank=True, null=True)
 
     def __str__(self):
         return 'Проект : %s ' % self.name
@@ -90,3 +91,39 @@ class Callback(models.Model):
     class Meta:
         verbose_name = "Форма заказа звонка"
         verbose_name_plural = "Формы заказа звонка"
+
+
+class SeoTag(models.Model):
+    indexTitle = models.CharField('Тег Title для главной', max_length=255, blank=True, null=True)
+    indexDescription = models.CharField('Тег Description для главной', max_length=255, blank=True, null=True)
+    indexKeywords = models.TextField('Тег Keywords для главной', blank=True, null=True)
+    servicesTitle = models.CharField('Тег Title для страницы со всеми услугами', max_length=255, blank=True, null=True)
+    servicesDescription = models.CharField('Тег Description для страницы со всеми услугам', max_length=255, blank=True,
+                                           null=True)
+    servicesKeywords = models.TextField('Тег Keywords для страницы со всеми услугам', blank=True, null=True)
+    projectsTitle = models.CharField('Тег Title для страницы со всеми проектами', max_length=255, blank=True, null=True)
+    projectsDescription = models.CharField('Тег Description для страницы со всеми проектами', max_length=255, blank=True,
+                                        null=True)
+    projectsKeywords = models.TextField('Тег Keywords для страницы со всеми проектами', blank=True, null=True)
+
+    contactTitle = models.CharField('Тег Title для страницы контакты', max_length=255, blank=True, null=True)
+    contactDescription = models.CharField('Тег Description для страницы контакты', max_length=255, blank=True,
+                                        null=True)
+    contactKeywords = models.TextField('Тег Keywords для страницы контакты', blank=True, null=True)
+
+    aboutTitle = models.CharField('Тег Title для страницы о компании', max_length=255, blank=True, null=True)
+    aboutDescription = models.CharField('Тег Description для страницы о компании', max_length=255, blank=True,
+                                        null=True)
+    aboutKeywords = models.TextField('Тег Keywords для страницы о компании', blank=True, null=True)
+
+    yandexMetrika = models.TextField('Код Яндекс метрики', blank=True, null=True)
+    fbPixel = models.TextField('Код пикселя', blank=True, null=True)
+    yandexTAG = models.CharField('Код подтверждения Яндекс', max_length=255, blank=True, null=True)
+    googleTAG = models.CharField('Код подтверждения google', max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return 'Теги для статических страниц'
+
+    class Meta:
+        verbose_name = "Теги для статических страниц"
+        verbose_name_plural = "Теги для статических страниц"
