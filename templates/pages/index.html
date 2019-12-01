@@ -18,503 +18,501 @@
 
 {% block content %}
 
-		<div class="jumbotron">
+    <div class="jumbotron">
 
-			<div class="carousel slide js-jumbotron-slider" id="headerCarousel" data-ride="carousel" data-interval="5000">
+        <div class="carousel slide js-jumbotron-slider" id="headerCarousel" data-ride="carousel" data-interval="5000">
 
-				<div class="carousel-inner">
-                    {% for banner in allBanners %}
+            <div class="carousel-inner">
+                {% for banner in allBanners %}
 
                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %} ">
-						<img src="{{ banner.image.url }}" srcset="{{ banner.image.url }} 1920w, {{ banner.image.url }} 425w" sizes="100vw" alt="">
-						<div class="container">
-							<div class="jumbotron-content">
-								<h1 class="jumbotron-content__title">{{ banner.bigText }}e</h1>
-								<div class="jumbotron-content__description">
-									<p>
-										{{ banner.smallText }}
-									</p>
-									<p>
-										<a class="btn btn-primary" href="{{ banner.buttonUrl }}" target="_self">{{ banner.buttonText | upper}}</a>
-										<a class="btn btn-tertiary" href="{% url 'services' %}" target="_self">Услуги</a>
-									</p>
-								</div><!-- /.jumbotron-content__description -->
-							</div><!-- /.jumbotron-content -->
-						</div><!-- /.container -->
-					</div><!-- /.carousel-item -->
+                        <img src="{{ banner.image.url }}" srcset="{{ banner.image.url }} 1920w, {{ banner.image.url }} 425w" sizes="100vw" alt="">
+                        <div class="container">
+                            <div class="jumbotron-content">
+                                <h1 class="jumbotron-content__title">{{ banner.bigText }}e</h1>
+                                <div class="jumbotron-content__description">
+                                    <p>
+                                        {{ banner.smallText }}
+                                    </p>
+                                    <p>
+                                        <a class="btn btn-primary" href="{{ banner.buttonUrl }}" target="_self">{{ banner.buttonText | upper}}</a>
+                                        <a class="btn btn-tertiary" href="{% url 'services' %}" target="_self">Услуги</a>
+                                    </p>
+                                </div><!-- /.jumbotron-content__description -->
+                            </div><!-- /.jumbotron-content -->
+                        </div><!-- /.container -->
+                    </div><!-- /.carousel-item -->
 
-                    {% endfor %}
+                {% endfor %}
 
 
 
-				</div><!-- /.carousel-inner -->
+            </div><!-- /.carousel-inner -->
 
-				<div class="jumbotron__extras">
+            <div class="jumbotron__extras">
 
-					<div class="container">
+                <div class="container">
 
-						<a class="left jumbotron__control" href="#headerCarousel" role="button" data-slide="prev">
-							<i class="fa fa-caret-left"></i>
-						</a>
-						<a class="right jumbotron__control" href="#headerCarousel" role="button" data-slide="next">
-							<i class="fa fa-caret-right"></i>
-						</a>
+                    <a class="left jumbotron__control" href="#headerCarousel" role="button" data-slide="prev">
+                        <i class="fa fa-caret-left"></i>
+                    </a>
+                    <a class="right jumbotron__control" href="#headerCarousel" role="button" data-slide="next">
+                        <i class="fa fa-caret-right"></i>
+                    </a>
 
-						<div class="jumbotron__widgets hidden-md-down pull-right">
+                    <div class="jumbotron__widgets hidden-md-down pull-right">
 
-							<div class="widget">
-								<div class="icon-box">
-									<i class="fa fa-phone"></i>
-									<div class="icon-box__text">
-										<h4 class="icon-box__title">Телефон:</h4>
-										<span class="icon-box__subtitle">+7 (977) 301-71-88</span>
-									</div>
-								</div><!-- /.icon-box -->
-							</div>
+                        <div class="widget">
+                            <div class="icon-box">
+                                <i class="fa fa-phone"></i>
+                                <div class="icon-box__text">
+                                    <h4 class="icon-box__title">Телефон:</h4>
+                                    <span class="icon-box__subtitle">+7 (977) 301-71-88</span>
+                                </div>
+                            </div><!-- /.icon-box -->
+                        </div>
 
-							<div class="widget">
-								<div class="icon-box">
-									<i class="fa fa-clock-o"></i>
-									<div class="icon-box__text">
-										<h4 class="icon-box__title">Время работы:</h4>
-										<span class="icon-box__subtitle">ежедневно с 8:00 до 20:00</span>
-									</div>
-								</div><!-- /.icon-box -->
-							</div>
+                        <div class="widget">
+                            <div class="icon-box">
+                                <i class="fa fa-clock-o"></i>
+                                <div class="icon-box__text">
+                                    <h4 class="icon-box__title">Время работы:</h4>
+                                    <span class="icon-box__subtitle">ежедневно с 8:00 до 20:00</span>
+                                </div>
+                            </div><!-- /.icon-box -->
+                        </div>
 
-							<div class="widget">
-								<div class="icon-box">
-									<i class="fa fa-envelope-o"></i>
-									<div class="icon-box__text">
-										<h4 class="icon-box__title">E-mail:</h4>
-										<span class="icon-box__subtitle">isp@pto-msk.com</span>
-									</div>
-								</div><!-- /.icon-box -->
-							</div>
+                        <div class="widget">
+                            <div class="icon-box">
+                                <i class="fa fa-envelope-o"></i>
+                                <div class="icon-box__text">
+                                    <h4 class="icon-box__title">E-mail:</h4>
+                                    <span class="icon-box__subtitle">isp@pto-msk.com</span>
+                                </div>
+                            </div><!-- /.icon-box -->
+                        </div>
 
-							<!--div class="widget">
-								<a class="social-icons__link" href="https://www.facebook.com/ProteusThemes/" target="_self"><i class="fa fa-whatsapp"></i></a>
+                        <!--div class="widget">
+                            <a class="social-icons__link" href="https://www.facebook.com/ProteusThemes/" target="_self"><i class="fa fa-whatsapp"></i></a>
 
-							</div -->
+                        </div -->
 
-						</div><!-- /.jumbotron__widgets -->
+                    </div><!-- /.jumbotron__widgets -->
 
-					</div><!-- /.container -->
+                </div><!-- /.container -->
 
-				</div><!-- /.jumbotron__extras -->
+            </div><!-- /.jumbotron__extras -->
 
-			</div><!-- /.carousel -->
+        </div><!-- /.carousel -->
 
-		</div><!-- /.jumbotron -->
+    </div><!-- /.jumbotron -->
 
-		<section class="services">
+    <section class="services">
 
-			<div class="container">
+        <div class="container">
 
-				<div class="row">
-                    {% for service in allSevices %}
-				    	<div class="col-lg-4 page-box--block">
+            <div class="row">
+                {% for service in allSevices %}
+                    <div class="col-lg-4 page-box--block">
 
-						<a class="page-box__picture" href="{% url 'service' service.nameSlug %}">
-							<img src="{{ service.image.url }}" width="360" height="240" srcset="{{ service.image.url }} 360w, {{ service.image.url }} 840w" sizes="(min-width: 992px) 360px, calc(100vw - 30px)" alt="{{ service.name }}">
-						</a>
-						<div class="page-box__content">
-							<h4 class="page-box__title"><a href="{% url 'service' service.nameSlug %}">{{ service.name }}</a></h4>
-							<p class="page-box__text">
+                        <a class="page-box__picture" href="{% url 'service' service.nameSlug %}">
+                            <img src="{{ service.image.url }}" width="360" height="240" srcset="{{ service.image.url }} 360w, {{ service.image.url }} 840w" sizes="(min-width: 992px) 360px, calc(100vw - 30px)" alt="{{ service.name }}">
+                        </a>
+                        <div class="page-box__content">
+                            <h4 class="page-box__title"><a href="{% url 'service' service.nameSlug %}">{{ service.name }}</a></h4>
+                            <p class="page-box__text">
                                 {{ service.short_description }}
-							</p>
-							<a href="{% url 'service' service.nameSlug %}" class="page-box__more-link">Подробнее</a>
-						</div>
+                            </p>
+                            <a href="{% url 'service' service.nameSlug %}" class="page-box__more-link">Подробнее</a>
+                        </div>
 
-					</div><!-- /.col -->
-                    {% endfor %}
-
-
-
-				</div><!-- /.row -->
-
-			</div><!-- /.container -->
-
-		</section><!-- /.services -->
-
-{#		<section class="projects">#}
-{##}
-{#			<div class="container">#}
-{##}
-{#				<div class="row">#}
-{##}
-{#					<div class="col-md-12">#}
-{##}
-{#						<div class="portfolio-grid  portfolio-grid--slider" data-type="slider">#}
-{##}
-{#							<nav class="portfolio-grid__header">#}
-{##}
-{#								<div class="portfolio-grid__arrows js-wpg-arrows">#}
-{#									<a class="portfolio-grid__arrow" href="#portfolio-grid-widget" role="button" data-slide="prev">#}
-{#										<span class="fa fa-caret-left" aria-hidden="true"></span>#}
-{#										<span class="sr-only">Previous</span>#}
-{#									</a>#}
-{#									<a class="portfolio-grid__arrow" href="#portfolio-grid-widget" role="button" data-slide="next">#}
-{#										<span class="fa fa-caret-right" aria-hidden="true"></span>#}
-{#										<span class="sr-only">Next</span>#}
-{#									</a>#}
-{#								</div>#}
-{##}
-{#								<a href="#" class="portfolio-grid__mobile-filter js-filter btn btn-primary btn-sm hidden-lg-up">#}
-{#									<span class="fa  fa-filter"></span> &nbsp;#}
-{#									FILTER#}
-{#								</a>#}
-{##}
-{#								<ul class="portfolio-grid__nav js-wpg-nav-holder">#}
-{#									<li class="portfolio-grid__nav-item is-active">#}
-{#										<a href="#all" data-category="*" class="portfolio-grid__nav-link js-wpg-nav">All Projects</a>#}
-{#									</li>#}
-{#									<li class="portfolio-grid__nav-item">#}
-{#										<a href="#interior-design" data-category="interior-design" class="portfolio-grid__nav-link js-wpg-nav">Interior Design</a>#}
-{#									</li>#}
-{#									<li class="portfolio-grid__nav-item">#}
-{#										<a href="#renovation" data-category="renovation" class="portfolio-grid__nav-link js-wpg-nav">Renovation</a>#}
-{#									</li>#}
-{#									<li class="portfolio-grid__nav-item">#}
-{#										<a href="#architecture" data-category="architecture" class="portfolio-grid__nav-link js-wpg-nav">Architecture</a>#}
-{#									</li>#}
-{#									<li class="portfolio-grid__nav-item">#}
-{#										<a href="#landscaping" data-category="landscaping" class="portfolio-grid__nav-link js-wpg-nav">Landscaping</a>#}
-{#									</li>#}
-{#									<li class="portfolio-grid__nav-item">#}
-{#										<a href="#gardening" data-category="gardening" class="portfolio-grid__nav-link js-wpg-nav">Gardening</a>#}
-{#									</li>#}
-{#								</ul>#}
-{##}
-{#							</nav>#}
-{##}
-{#							<div id="portfolio-grid-widget" class="carousel slide" data-ride="carousel" data-interval="false">#}
-{##}
-{#								<div class="carousel-inner js-wpg-items" role="listbox">#}
-{##}
-{#									<div class="carousel-item active">#}
-{#										<div class="row">#}
-{#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="gardening">#}
-{#												<a class="card portfolio-grid__card js-wpg-card" href="projects/greenhouse-construction.html">#}
-{#													<img width="360" height="240" src="images/19-360x240.jpg" class="portfolio-grid__card-img" alt="19">#}
-{#													<div class="card-block portfolio-grid__card-block">#}
-{#														<h5>Greenhouse Construction</h5>#}
-{#														<p>Nov 2015</p>#}
-{#													</div>#}
-{#												</a>#}
-{#											</div>#}
-{#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="interior-design">#}
-{#												<a class="card portfolio-grid__card js-wpg-card" href="projects/modern-kitchen-renovation.html">#}
-{#													<img width="360" height="240" src="images/93-360x240.jpg" class="portfolio-grid__card-img" alt="93">#}
-{#													<div class="card-block portfolio-grid__card-block">#}
-{#														<h5>Modern Kitchen</h5>#}
-{#														<p>September 2015</p>#}
-{#													</div>#}
-{#												</a>#}
-{#											</div>#}
-{#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="landscaping">#}
-{#												<a class="card portfolio-grid__card js-wpg-card" href="projects/outdoor-light-fixtures.html">#}
-{#													<img width="360" height="240" src="images/45-360x240.jpg" class="portfolio-grid__card-img" alt="45">#}
-{#													<div class="card-block portfolio-grid__card-block">#}
-{#														<h5>Outdoor Light Fixtures</h5>#}
-{#														<p>August 2015</p>#}
-{#													</div>#}
-{#												</a>#}
-{#											</div>#}
-{#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="landscaping">#}
-{#												<a class="card portfolio-grid__card js-wpg-card" href="projects/family-pool.html">#}
-{#													<img width="360" height="240" src="images/2-360x240.jpg" class="portfolio-grid__card-img" alt="2">#}
-{#													<div class="card-block portfolio-grid__card-block">#}
-{#														<h5>Family Pool</h5>#}
-{#														<p>October 2015</p>#}
-{#													</div>#}
-{#												</a>#}
-{#											</div>#}
-{#										</div>#}
-{#									</div><!-- ./carousel-item -->#}
-{##}
-{#									<div class="carousel-item">#}
-{#										<div class="row">#}
-{#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="interior-design">#}
-{#												<a class="card portfolio-grid__card js-wpg-card" href="projects/staircase-addition.html">#}
-{#													<img width="360" height="240" src="images/38-360x240.jpg" class="portfolio-grid__card-img" alt="38">#}
-{#													<div class="card-block portfolio-grid__card-block">#}
-{#														<h5>Staircase Addition</h5>#}
-{#														<p>November 2015</p>#}
-{#													</div>#}
-{#												</a>#}
-{#											</div>#}
-{#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="renovation">#}
-{#												<a class="card portfolio-grid__card js-wpg-card" href="projects/townhouse-facade-adaptation.html">#}
-{#													<img width="360" height="240" src="images/62-360x240.jpg" class="portfolio-grid__card-img" alt="62">#}
-{#													<div class="card-block portfolio-grid__card-block">#}
-{#														<h5>Townhouse Facade</h5>#}
-{#														<p>October 2015</p>#}
-{#													</div>#}
-{#												</a>#}
-{#											</div>#}
-{#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="architecture">#}
-{#												<a class="card portfolio-grid__card  js-wpg-card" href="projects/family-house-plans.html">#}
-{#													<img width="360" height="240" src="images/108-360x240.jpg" class="portfolio-grid__card-img" alt="108">#}
-{#													<div class="card-block portfolio-grid__card-block">#}
-{#														<h5>Family House Plans</h5>#}
-{#														<p>November 2015</p>#}
-{#													</div>#}
-{#												</a>#}
-{#											</div>#}
-{#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="interior-design,renovation">#}
-{#												<a class="card portfolio-grid__card js-wpg-card" href="projects/gas-chimney-adaptation.html">#}
-{#													<img width="360" height="240" src="images/7-360x240.jpg" class="portfolio-grid__card-img" alt="7">#}
-{#													<div class="card-block portfolio-grid__card-block">#}
-{#														<h5>Gas Chimney Adaptation</h5>#}
-{#														<p>Avgust 2015</p>#}
-{#													</div>#}
-{#												</a>#}
-{#											</div>#}
-{#										</div>#}
-{#									</div><!-- /.carousel-item -->#}
-{##}
-{#									<div class="carousel-item">#}
-{#										<div class="row">#}
-{#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="architecture">#}
-{#												<a class="card portfolio-grid__card js-wpg-card" href="projects/3d-modeling-living.html">#}
-{#													<img width="360" height="240" src="images/105-360x240.jpg" class="portfolio-grid__card-img" alt="105">#}
-{#													<div class="card-block portfolio-grid__card-block">#}
-{#														<h5>3D Modeling Living Room</h5>#}
-{#														<p>January 2015</p>#}
-{#													</div>#}
-{#												</a>#}
-{#											</div>#}
-{#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="architecture">#}
-{#												<a class="card portfolio-grid__card js-wpg-card" href="projects/condo-neighborhood.html">#}
-{#													<img width="360" height="240" src="images/5-360x240.jpg" class="portfolio-grid__card-img" alt="5">#}
-{#													<div class="card-block portfolio-grid__card-block">#}
-{#														<h5>Condo Neighborhood</h5>#}
-{#														<p>July 2015</p>#}
-{#													</div>#}
-{#												</a>#}
-{#											</div>#}
-{#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="renovation">#}
-{#												<a class="card portfolio-grid__card js-wpg-card" href="projects/wooden-terrace.html">#}
-{#													<img width="360" height="240" src="images/49-360x240.jpg" class="portfolio-grid__card-img" alt="49">#}
-{#													<div class="card-block portfolio-grid__card-block">#}
-{#														<h5>Wooden Terrace</h5>#}
-{#														<p>October 2015</p>#}
-{#													</div>#}
-{#												</a>#}
-{#											</div>#}
-{#										</div>#}
-{#									</div><!-- /.carousel-item -->#}
-{##}
-{#								</div><!-- /.carousel-inner -->#}
-{##}
-{#							</div><!-- /.carousel -->#}
-{##}
-{#						</div><!-- /.portfolio-grid -->#}
-{##}
-{#					</div><!-- /.col -->#}
-{##}
-{#				</div><!-- /.row -->#}
-{##}
-{#			</div><!-- /.container -->#}
-{##}
-{#		</section><!-- /.projects -->#}
+                    </div><!-- /.col -->
+                {% endfor %}
 
 
 
-		<section class="cta">
+            </div><!-- /.row -->
 
-			<div class="container">
+        </div><!-- /.container -->
 
-				<div class="row">
+    </section><!-- /.services -->
 
-					<div class="col-md-12">
-						<div class="call-to-action__text">
-							<h4 class="call-to-action__title">
-								Вам нужны проффесионалы в сфере подготовки документации?
-							</h4>
-{#							<p class="call-to-action__subtitle">#}
-{#								We offer the best engineers and builders to make your dreams come true.#}
-{#							</p>#}
-						</div>
-						<div class="call-to-action__button">
-							<a class="btn btn-primary" href="{% url 'services' %}" target="_self">Прайс</a>
-							<a class="btn btn-secondary" href="{% url 'projects' %}" target="_self">Проекты</a>
-						</div>
-					</div><!-- /.col -->
+    {#		<section class="projects">#}
+    {##}
+    {#			<div class="container">#}
+    {##}
+    {#				<div class="row">#}
+    {##}
+    {#					<div class="col-md-12">#}
+    {##}
+    {#						<div class="portfolio-grid  portfolio-grid--slider" data-type="slider">#}
+    {##}
+    {#							<nav class="portfolio-grid__header">#}
+    {##}
+    {#								<div class="portfolio-grid__arrows js-wpg-arrows">#}
+    {#									<a class="portfolio-grid__arrow" href="#portfolio-grid-widget" role="button" data-slide="prev">#}
+    {#										<span class="fa fa-caret-left" aria-hidden="true"></span>#}
+    {#										<span class="sr-only">Previous</span>#}
+    {#									</a>#}
+    {#									<a class="portfolio-grid__arrow" href="#portfolio-grid-widget" role="button" data-slide="next">#}
+    {#										<span class="fa fa-caret-right" aria-hidden="true"></span>#}
+    {#										<span class="sr-only">Next</span>#}
+    {#									</a>#}
+    {#								</div>#}
+    {##}
+    {#								<a href="#" class="portfolio-grid__mobile-filter js-filter btn btn-primary btn-sm hidden-lg-up">#}
+    {#									<span class="fa  fa-filter"></span> &nbsp;#}
+    {#									FILTER#}
+    {#								</a>#}
+    {##}
+    {#								<ul class="portfolio-grid__nav js-wpg-nav-holder">#}
+    {#									<li class="portfolio-grid__nav-item is-active">#}
+    {#										<a href="#all" data-category="*" class="portfolio-grid__nav-link js-wpg-nav">All Projects</a>#}
+    {#									</li>#}
+    {#									<li class="portfolio-grid__nav-item">#}
+    {#										<a href="#interior-design" data-category="interior-design" class="portfolio-grid__nav-link js-wpg-nav">Interior Design</a>#}
+    {#									</li>#}
+    {#									<li class="portfolio-grid__nav-item">#}
+    {#										<a href="#renovation" data-category="renovation" class="portfolio-grid__nav-link js-wpg-nav">Renovation</a>#}
+    {#									</li>#}
+    {#									<li class="portfolio-grid__nav-item">#}
+    {#										<a href="#architecture" data-category="architecture" class="portfolio-grid__nav-link js-wpg-nav">Architecture</a>#}
+    {#									</li>#}
+    {#									<li class="portfolio-grid__nav-item">#}
+    {#										<a href="#landscaping" data-category="landscaping" class="portfolio-grid__nav-link js-wpg-nav">Landscaping</a>#}
+    {#									</li>#}
+    {#									<li class="portfolio-grid__nav-item">#}
+    {#										<a href="#gardening" data-category="gardening" class="portfolio-grid__nav-link js-wpg-nav">Gardening</a>#}
+    {#									</li>#}
+    {#								</ul>#}
+    {##}
+    {#							</nav>#}
+    {##}
+    {#							<div id="portfolio-grid-widget" class="carousel slide" data-ride="carousel" data-interval="false">#}
+    {##}
+    {#								<div class="carousel-inner js-wpg-items" role="listbox">#}
+    {##}
+    {#									<div class="carousel-item active">#}
+    {#										<div class="row">#}
+    {#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="gardening">#}
+    {#												<a class="card portfolio-grid__card js-wpg-card" href="projects/greenhouse-construction.html">#}
+    {#													<img width="360" height="240" src="images/19-360x240.jpg" class="portfolio-grid__card-img" alt="19">#}
+    {#													<div class="card-block portfolio-grid__card-block">#}
+    {#														<h5>Greenhouse Construction</h5>#}
+    {#														<p>Nov 2015</p>#}
+    {#													</div>#}
+    {#												</a>#}
+    {#											</div>#}
+    {#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="interior-design">#}
+    {#												<a class="card portfolio-grid__card js-wpg-card" href="projects/modern-kitchen-renovation.html">#}
+    {#													<img width="360" height="240" src="images/93-360x240.jpg" class="portfolio-grid__card-img" alt="93">#}
+    {#													<div class="card-block portfolio-grid__card-block">#}
+    {#														<h5>Modern Kitchen</h5>#}
+    {#														<p>September 2015</p>#}
+    {#													</div>#}
+    {#												</a>#}
+    {#											</div>#}
+    {#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="landscaping">#}
+    {#												<a class="card portfolio-grid__card js-wpg-card" href="projects/outdoor-light-fixtures.html">#}
+    {#													<img width="360" height="240" src="images/45-360x240.jpg" class="portfolio-grid__card-img" alt="45">#}
+    {#													<div class="card-block portfolio-grid__card-block">#}
+    {#														<h5>Outdoor Light Fixtures</h5>#}
+    {#														<p>August 2015</p>#}
+    {#													</div>#}
+    {#												</a>#}
+    {#											</div>#}
+    {#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="landscaping">#}
+    {#												<a class="card portfolio-grid__card js-wpg-card" href="projects/family-pool.html">#}
+    {#													<img width="360" height="240" src="images/2-360x240.jpg" class="portfolio-grid__card-img" alt="2">#}
+    {#													<div class="card-block portfolio-grid__card-block">#}
+    {#														<h5>Family Pool</h5>#}
+    {#														<p>October 2015</p>#}
+    {#													</div>#}
+    {#												</a>#}
+    {#											</div>#}
+    {#										</div>#}
+    {#									</div><!-- ./carousel-item -->#}
+    {##}
+    {#									<div class="carousel-item">#}
+    {#										<div class="row">#}
+    {#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="interior-design">#}
+    {#												<a class="card portfolio-grid__card js-wpg-card" href="projects/staircase-addition.html">#}
+    {#													<img width="360" height="240" src="images/38-360x240.jpg" class="portfolio-grid__card-img" alt="38">#}
+    {#													<div class="card-block portfolio-grid__card-block">#}
+    {#														<h5>Staircase Addition</h5>#}
+    {#														<p>November 2015</p>#}
+    {#													</div>#}
+    {#												</a>#}
+    {#											</div>#}
+    {#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="renovation">#}
+    {#												<a class="card portfolio-grid__card js-wpg-card" href="projects/townhouse-facade-adaptation.html">#}
+    {#													<img width="360" height="240" src="images/62-360x240.jpg" class="portfolio-grid__card-img" alt="62">#}
+    {#													<div class="card-block portfolio-grid__card-block">#}
+    {#														<h5>Townhouse Facade</h5>#}
+    {#														<p>October 2015</p>#}
+    {#													</div>#}
+    {#												</a>#}
+    {#											</div>#}
+    {#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="architecture">#}
+    {#												<a class="card portfolio-grid__card  js-wpg-card" href="projects/family-house-plans.html">#}
+    {#													<img width="360" height="240" src="images/108-360x240.jpg" class="portfolio-grid__card-img" alt="108">#}
+    {#													<div class="card-block portfolio-grid__card-block">#}
+    {#														<h5>Family House Plans</h5>#}
+    {#														<p>November 2015</p>#}
+    {#													</div>#}
+    {#												</a>#}
+    {#											</div>#}
+    {#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="interior-design,renovation">#}
+    {#												<a class="card portfolio-grid__card js-wpg-card" href="projects/gas-chimney-adaptation.html">#}
+    {#													<img width="360" height="240" src="images/7-360x240.jpg" class="portfolio-grid__card-img" alt="7">#}
+    {#													<div class="card-block portfolio-grid__card-block">#}
+    {#														<h5>Gas Chimney Adaptation</h5>#}
+    {#														<p>Avgust 2015</p>#}
+    {#													</div>#}
+    {#												</a>#}
+    {#											</div>#}
+    {#										</div>#}
+    {#									</div><!-- /.carousel-item -->#}
+    {##}
+    {#									<div class="carousel-item">#}
+    {#										<div class="row">#}
+    {#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="architecture">#}
+    {#												<a class="card portfolio-grid__card js-wpg-card" href="projects/3d-modeling-living.html">#}
+    {#													<img width="360" height="240" src="images/105-360x240.jpg" class="portfolio-grid__card-img" alt="105">#}
+    {#													<div class="card-block portfolio-grid__card-block">#}
+    {#														<h5>3D Modeling Living Room</h5>#}
+    {#														<p>January 2015</p>#}
+    {#													</div>#}
+    {#												</a>#}
+    {#											</div>#}
+    {#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="architecture">#}
+    {#												<a class="card portfolio-grid__card js-wpg-card" href="projects/condo-neighborhood.html">#}
+    {#													<img width="360" height="240" src="images/5-360x240.jpg" class="portfolio-grid__card-img" alt="5">#}
+    {#													<div class="card-block portfolio-grid__card-block">#}
+    {#														<h5>Condo Neighborhood</h5>#}
+    {#														<p>July 2015</p>#}
+    {#													</div>#}
+    {#												</a>#}
+    {#											</div>#}
+    {#											<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="renovation">#}
+    {#												<a class="card portfolio-grid__card js-wpg-card" href="projects/wooden-terrace.html">#}
+    {#													<img width="360" height="240" src="images/49-360x240.jpg" class="portfolio-grid__card-img" alt="49">#}
+    {#													<div class="card-block portfolio-grid__card-block">#}
+    {#														<h5>Wooden Terrace</h5>#}
+    {#														<p>October 2015</p>#}
+    {#													</div>#}
+    {#												</a>#}
+    {#											</div>#}
+    {#										</div>#}
+    {#									</div><!-- /.carousel-item -->#}
+    {##}
+    {#								</div><!-- /.carousel-inner -->#}
+    {##}
+    {#							</div><!-- /.carousel -->#}
+    {##}
+    {#						</div><!-- /.portfolio-grid -->#}
+    {##}
+    {#					</div><!-- /.col -->#}
+    {##}
+    {#				</div><!-- /.row -->#}
+    {##}
+    {#			</div><!-- /.container -->#}
+    {##}
+    {#		</section><!-- /.projects -->#}
 
-				</div><!-- /.row -->
 
-			</div><!-- /.container -->
 
-		</section><!-- /.cta -->
+    <section class="cta">
 
-		<section class="promise">
+        <div class="container">
 
-			<div class="container">
+            <div class="row">
 
-				<div class="row">
+                <div class="col-md-12">
+                    <div class="call-to-action__text">
+                        <h4 class="call-to-action__title">
+                            Вам нужны проффесионалы в сфере подготовки документации?
+                        </h4>
+                        {#							<p class="call-to-action__subtitle">#}
+                        {#								We offer the best engineers and builders to make your dreams come true.#}
+                        {#							</p>#}
+                    </div>
+                    <div class="call-to-action__button">
+                        <a class="btn btn-primary" href="{% url 'services' %}" target="_self">Прайс</a>
+                        <a class="btn btn-secondary" href="{% url 'projects' %}" target="_self">Проекты</a>
+                    </div>
+                </div><!-- /.col -->
 
-					<div class="col-md-12 text-center">
+            </div><!-- /.row -->
 
-						<h3>Результат сотрудничества</h3>
-						<p>
-                            Выбирая нас, Вы выбираете работу в команде, где каждый участник в первую очередь работает на результат, двигаясь к конкретной цели - законченному проекту и заказчику, которому запомнится этот опыт как лучшее обращение к наёмным специалистам.
-						</p>
-						<p>
-{#							<img class="alignnone" src="images/signature.png" alt="signature" width="232" height="58">#}
-						</p>
+        </div><!-- /.container -->
 
-					</div><!-- /.col -->
+    </section><!-- /.cta -->
 
-				</div><!-- /.row -->
+    <section class="promise">
 
-			</div><!-- /.container -->
+        <div class="container">
 
-		</section><!-- /.promise -->
+            <div class="row">
 
-{#		<section class="testimonials">#}
-{##}
-{#			<div class="container">#}
-{##}
-{#				<div class="row">#}
-{##}
-{#					<div class="col-md-12">#}
-{##}
-{#						<h3 class="widget-title"><span>Testimonials</span></h3>#}
-{#						<div class="testimonial__container">#}
-{##}
-{#							<div id="carousel-testimonials-widget" class="carousel slide testimonial" data-ride="carousel" data-interval="false">#}
-{##}
-{#								<div class="carousel-inner" role="listbox">#}
-{##}
-{#									<div class="carousel-item active">#}
-{#										<div class="row">#}
-{#											<div class="col-xs-12 col-sm-12">#}
-{#												<blockquote>#}
-{#													<div class="testimonial__author-avatar">#}
-{#														<img src="images/testimonials-2-300x300.jpg" alt="">#}
-{#													</div>#}
-{#													<div class="testimonial__author">#}
-{#														<cite class="testimonial__author-name">Alan Owens</cite>#}
-{#														<div>OWN Inc.</div>#}
-{#													</div>#}
-{#													<p class="testimonial__quote">#}
-{#														The StructurePress team was very sufficient in maintaining the integrity of this project in terms of planning, scheduling, cost and quality, and their team’s ability to work in person with owners, architects, designers and planner makes them a leader in their field.#}
-{#													</p>#}
-{#												</blockquote>#}
-{#											</div>#}
-{#										</div>#}
-{#									</div><!-- /.carousel-item -->#}
-{##}
-{#									<div class="carousel-item">#}
-{#										<div class="row">#}
-{#											<div class="col-xs-12 col-sm-12">#}
-{#												<blockquote>#}
-{#													<div class="testimonial__author-avatar">#}
-{#														<img src="images/testimonials-4-300x300.jpg" alt="">#}
-{#													</div>#}
-{#													<div class="testimonial__author">#}
-{#														<cite class="testimonial__author-name">Rebecca Watson</cite>#}
-{#														<div>R. W. Construction Inc.</div>#}
-{#													</div>#}
-{#													<p class="testimonial__quote">#}
-{#														StructrePress company has performed in a consistent, demanding and professional manner. They have got my project on time with the competition with a highly skilled, well-organized and experienced team of professional construction managers. Our company is looking forward to hire them again.#}
-{#													</p>#}
-{#												</blockquote>#}
-{#											</div>#}
-{#										</div>#}
-{#									</div><!-- /.carousel-item -->#}
-{##}
-{#									<div class="carousel-item">#}
-{#										<div class="row">#}
-{#											<div class="col-xs-12  col-sm-12">#}
-{#												<blockquote>#}
-{#													<div class="testimonial__author-avatar">#}
-{#														<img src="images/testimonials-3-300x300.jpg" alt="">#}
-{#													</div>#}
-{#													<div class="testimonial__author">#}
-{#														<cite class="testimonial__author-name">John Weller</cite>#}
-{#														<div>Welling Design &amp; Engineering</div>#}
-{#													</div>#}
-{#													<p class="testimonial__quote">#}
-{#														As the architect for major projects I really like to collaborte with StructurePress company. We are particularly organized through the construction process. My own project was a great example of contractors and architects working as a team for the good of the project and its users.#}
-{#													</p>#}
-{#												</blockquote>#}
-{#											</div>#}
-{#										</div>#}
-{#									</div><!-- /.carousel-item -->#}
-{##}
-{#								</div><!-- /.carousel-inner -->#}
-{##}
-{#							</div><!-- /.carousel -->#}
-{##}
-{#							<a class="testimonial__carousel testimonial__carousel--left" href="#carousel-testimonials-widget" data-slide="prev">#}
-{#								<i class="fa fa-caret-left" aria-hidden="true"></i>#}
-{#								<span class="sr-only" role="button">Next</span>#}
-{#							</a>#}
-{#							<a class="testimonial__carousel testimonial__carousel--right" href="#carousel-testimonials-widget" data-slide="next">#}
-{#								<i class="fa fa-caret-right" aria-hidden="true"></i>#}
-{#								<span class="sr-only" role="button">Previous</span>#}
-{#							</a>#}
-{##}
-{#						</div><!-- /.testimonial__container -->#}
-{##}
-{#					</div><!-- /.col -->#}
-{##}
-{#				</div><!-- /.row -->#}
-{##}
-{#			</div><!-- /.container -->#}
-{##}
-{#		</section><!-- /.testimonials -->#}
+                <div class="col-md-12 text-center">
 
-		<section style="margin-top: 60px" class="partners">
+                    <h3>Результат сотрудничества</h3>
+                    <p>
+                        Выбирая нас, Вы выбираете работу в команде, где каждый участник в первую очередь работает на результат, двигаясь к конкретной цели - законченному проекту и заказчику, которому запомнится этот опыт как лучшее обращение к наёмным специалистам.
+                    </p>
+                    <p>
+                        {#							<img class="alignnone" src="images/signature.png" alt="signature" width="232" height="58">#}
+                    </p>
 
-			<div class="container">
+                </div><!-- /.col -->
 
-				<div class="row">
+            </div><!-- /.row -->
 
-					<div class="col-md-12">
+        </div><!-- /.container -->
 
-						<h3 class="widget-title"><span>Наши заказчики</span></h3>
+    </section><!-- /.promise -->
 
-							<div class="owl-carousel">
-                                    <div style="    height: 250px;   display: flex; align-items: center;">
-                                        <img src="{% static 'images/partner2.jpg' %}" alt="Client logo">
-                                    </div>
+    {#		<section class="testimonials">#}
+    {##}
+    {#			<div class="container">#}
+    {##}
+    {#				<div class="row">#}
+    {##}
+    {#					<div class="col-md-12">#}
+    {##}
+    {#						<h3 class="widget-title"><span>Testimonials</span></h3>#}
+    {#						<div class="testimonial__container">#}
+    {##}
+    {#							<div id="carousel-testimonials-widget" class="carousel slide testimonial" data-ride="carousel" data-interval="false">#}
+    {##}
+    {#								<div class="carousel-inner" role="listbox">#}
+    {##}
+    {#									<div class="carousel-item active">#}
+    {#										<div class="row">#}
+    {#											<div class="col-xs-12 col-sm-12">#}
+    {#												<blockquote>#}
+    {#													<div class="testimonial__author-avatar">#}
+    {#														<img src="images/testimonials-2-300x300.jpg" alt="">#}
+    {#													</div>#}
+    {#													<div class="testimonial__author">#}
+    {#														<cite class="testimonial__author-name">Alan Owens</cite>#}
+    {#														<div>OWN Inc.</div>#}
+    {#													</div>#}
+    {#													<p class="testimonial__quote">#}
+    {#														The StructurePress team was very sufficient in maintaining the integrity of this project in terms of planning, scheduling, cost and quality, and their team’s ability to work in person with owners, architects, designers and planner makes them a leader in their field.#}
+    {#													</p>#}
+    {#												</blockquote>#}
+    {#											</div>#}
+    {#										</div>#}
+    {#									</div><!-- /.carousel-item -->#}
+    {##}
+    {#									<div class="carousel-item">#}
+    {#										<div class="row">#}
+    {#											<div class="col-xs-12 col-sm-12">#}
+    {#												<blockquote>#}
+    {#													<div class="testimonial__author-avatar">#}
+    {#														<img src="images/testimonials-4-300x300.jpg" alt="">#}
+    {#													</div>#}
+    {#													<div class="testimonial__author">#}
+    {#														<cite class="testimonial__author-name">Rebecca Watson</cite>#}
+    {#														<div>R. W. Construction Inc.</div>#}
+    {#													</div>#}
+    {#													<p class="testimonial__quote">#}
+    {#														StructrePress company has performed in a consistent, demanding and professional manner. They have got my project on time with the competition with a highly skilled, well-organized and experienced team of professional construction managers. Our company is looking forward to hire them again.#}
+    {#													</p>#}
+    {#												</blockquote>#}
+    {#											</div>#}
+    {#										</div>#}
+    {#									</div><!-- /.carousel-item -->#}
+    {##}
+    {#									<div class="carousel-item">#}
+    {#										<div class="row">#}
+    {#											<div class="col-xs-12  col-sm-12">#}
+    {#												<blockquote>#}
+    {#													<div class="testimonial__author-avatar">#}
+    {#														<img src="images/testimonials-3-300x300.jpg" alt="">#}
+    {#													</div>#}
+    {#													<div class="testimonial__author">#}
+    {#														<cite class="testimonial__author-name">John Weller</cite>#}
+    {#														<div>Welling Design &amp; Engineering</div>#}
+    {#													</div>#}
+    {#													<p class="testimonial__quote">#}
+    {#														As the architect for major projects I really like to collaborte with StructurePress company. We are particularly organized through the construction process. My own project was a great example of contractors and architects working as a team for the good of the project and its users.#}
+    {#													</p>#}
+    {#												</blockquote>#}
+    {#											</div>#}
+    {#										</div>#}
+    {#									</div><!-- /.carousel-item -->#}
+    {##}
+    {#								</div><!-- /.carousel-inner -->#}
+    {##}
+    {#							</div><!-- /.carousel -->#}
+    {##}
+    {#							<a class="testimonial__carousel testimonial__carousel--left" href="#carousel-testimonials-widget" data-slide="prev">#}
+    {#								<i class="fa fa-caret-left" aria-hidden="true"></i>#}
+    {#								<span class="sr-only" role="button">Next</span>#}
+    {#							</a>#}
+    {#							<a class="testimonial__carousel testimonial__carousel--right" href="#carousel-testimonials-widget" data-slide="next">#}
+    {#								<i class="fa fa-caret-right" aria-hidden="true"></i>#}
+    {#								<span class="sr-only" role="button">Previous</span>#}
+    {#							</a>#}
+    {##}
+    {#						</div><!-- /.testimonial__container -->#}
+    {##}
+    {#					</div><!-- /.col -->#}
+    {##}
+    {#				</div><!-- /.row -->#}
+    {##}
+    {#			</div><!-- /.container -->#}
+    {##}
+    {#		</section><!-- /.testimonials -->#}
 
-        <div style="    height: 250px;   display: flex; align-items: center;">
-									<img src="{% static 'images/partner2.jpg' %}" alt="Client logo">
-                 </div>
-        <div style="    height: 250px;   display: flex; align-items: center;">
-									<img src="{% static 'images/partner2.jpg' %}" alt="Client logo">
-                 </div>
-        <div style="    height: 250px;   display: flex; align-items: center;">
-									<img src="{% static 'images/partner2.jpg' %}" alt="Client logo">
-                 </div>
-        <div style="    height: 250px;   display: flex; align-items: center;">
-									<img src="{% static 'images/partner2.jpg' %}" alt="Client logo">
-                 </div>
-        <div style="    height: 250px;   display: flex; align-items: center;">
-									<img src="{% static 'images/partner2.jpg' %}" alt="Client logo">
-                 </div>
-                 <div style="    height: 250px;   display: flex; align-items: center;">
-                                	<img src="{% static 'images/partner2.jpg' %}" alt="Client logo">
-                          </div>
-                             <div style="    height: 250px;   display: flex; align-items: center;">
-                                	<img src="{% static 'images/partner2.jpg' %}" alt="Client logo">
-                                      </div>
-								</div>
+    <section style="margin-top: 60px" class="partners">
 
-						</div><!-- /.logo-panel -->
+        <div class="container">
 
-					</div><!-- /.col -->
+            <div class="row">
 
-				</div><!-- /.row -->
+                <div class="col-md-12">
 
-			</div><!-- /.container -->
+                    <h3 class="widget-title"><span>Наши заказчики</span></h3>
 
-		</section><!-- /.partners -->
+                    <div class="owl-carousel">
+                        <div style="    height: 250px;   display: flex; align-items: center;">
+                            <img src="{% static 'images/1.png' %}" alt="Client logo">
+                        </div>
+
+                        <div style="    height: 250px;   display: flex; align-items: center;">
+                            <img src="{% static 'images/2.png' %}" alt="Client logo">
+                        </div>
+                        <div style="    height: 250px;   display: flex; align-items: center;">
+                            <img src="{% static 'images/3.png' %}" alt="Client logo">
+                        </div>
+                        <div style="    height: 250px;   display: flex; align-items: center;">
+                            <img src="{% static 'images/4.png' %}" alt="Client logo">
+                        </div>
+                        <div style="    height: 250px;   display: flex; align-items: center;">
+                            <img src="{% static 'images/5.png' %}" alt="Client logo">
+                        </div>
+                        <div style="    height: 250px;   display: flex; align-items: center;">
+                            <img src="{% static 'images/6.png' %}" alt="Client logo">
+                        </div>
+                        <div style="    height: 250px;   display: flex; align-items: center;">
+                            <img src="{% static 'images/7.png' %}" alt="Client logo">
+                        </div>
+
+                    </div>
+
+                </div><!-- /.logo-panel -->
+
+            </div><!-- /.col -->
+
+        </div><!-- /.row -->
+
+        </div><!-- /.container -->
+
+    </section><!-- /.partners -->
 
 
 
