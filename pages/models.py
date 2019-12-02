@@ -9,9 +9,11 @@ class Banner(models.Model):
     order = models.IntegerField('Номер по порядку', default=1)
     bigText = models.CharField('Заголовок на баннере (70 символов)', max_length=70, blank=False, null=True)
     smallText = models.CharField('Описание на баннере (200 символов)', max_length=200, blank=False, null=True)
-    image = models.ImageField('Картинка для баннера (1920 x 660)', upload_to='banners/', blank=True)
-    buttonText = models.CharField('Надпись на первой кнопке', max_length=10, blank=False)
-    buttonUrl = models.CharField('Ссылка с кнопки', max_length=100, blank=False)
+    image = models.ImageField('Картинка для баннера (1920 x 660)', upload_to='banners/', blank=True, null=True)
+    buttonText = models.CharField('Надпись на первой кнопке', max_length=10, blank=False, null=True)
+    buttonUrl = models.CharField('Ссылка с кнопки', max_length=100, blank=False, null=True)
+    button1Text = models.CharField('Надпись на второй кнопке', max_length=10, blank=False, null=True)
+    button1Url = models.CharField('Ссылка с второй кнопки', max_length=100, blank=False, null=True)
     isActive = models.BooleanField('Отображать ?', default=True)
 
     def __str__(self):
@@ -61,9 +63,9 @@ class Service(models.Model):
 
 
 class Project(models.Model):
+    customer = models.CharField('Заказчик', max_length=40, blank=True, null=True)
     name = models.CharField('Название проекта ', max_length=255, blank=False, null=True)
     image = models.ImageField('Изображение (360 x 240)', upload_to='service_img/', blank=True)
-    customer = models.CharField('Заказчик', max_length=40, blank=True, null=True)
     town = models.CharField('Город', max_length=40, blank=True, null=True)
 
     def __str__(self):

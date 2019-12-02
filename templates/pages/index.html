@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    {{ block.super }}
+    {{ block.super }} - ГЛАВНАЯ
 {% endblock %}
 
 {% block keywords %}
@@ -29,14 +29,14 @@
                         <img src="{{ banner.image.url }}" srcset="{{ banner.image.url }} 1920w, {{ banner.image.url }} 425w" sizes="100vw" alt="">
                         <div class="container">
                             <div class="jumbotron-content">
-                                <h1 class="jumbotron-content__title">{{ banner.bigText }}</h1>
+                                <h1 class="jumbotron-content__title">{{ banner.bigText }}e</h1>
                                 <div class="jumbotron-content__description">
                                     <p>
                                         {{ banner.smallText }}
                                     </p>
                                     <p>
-                                        <a class="btn btn-primary" href="{{ banner.buttonUrl }}" target="_self">{{ banner.buttonText}}</a>
-                                        <a class="btn btn-tertiary" href="{% url 'services' %}" target="_self">Услуги</a>
+                                        <a class="btn btn-primary" href="{{ banner.buttonUrl }}" target="_self">{{ banner.buttonText }}</a>
+                                        <a class="btn btn-tertiary" href="{{ banner.button1Url }}" target="_self">{{ banner.button1Text }}</a>
                                     </p>
                                 </div><!-- /.jumbotron-content__description -->
                             </div><!-- /.jumbotron-content -->
@@ -123,7 +123,7 @@
                             <p class="page-box__text">
                                 {{ service.short_description }}
                             </p>
-                            <a href="{% url 'service' service.nameSlug %}" class="page-box__more-link">Подробнее</a>
+
                         </div>
 
                     </div><!-- /.col -->
@@ -331,7 +331,7 @@
                 <div class="col-md-12">
                     <div class="call-to-action__text">
                         <h4 class="call-to-action__title">
-                            Вам нужны профессионалы в сфере подготовки документации?
+                            Вам нужны професcионалы в сфере подготовки документации?
                         </h4>
                         {#							<p class="call-to-action__subtitle">#}
                         {#								We offer the best engineers and builders to make your dreams come true.#}
