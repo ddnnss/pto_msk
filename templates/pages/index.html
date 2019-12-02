@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    {{ block.super }} - ГЛАВНАЯ
+    {{ block.super }}
 {% endblock %}
 
 {% block keywords %}
@@ -29,13 +29,13 @@
                         <img src="{{ banner.image.url }}" srcset="{{ banner.image.url }} 1920w, {{ banner.image.url }} 425w" sizes="100vw" alt="">
                         <div class="container">
                             <div class="jumbotron-content">
-                                <h1 class="jumbotron-content__title">{{ banner.bigText }}e</h1>
+                                <h1 class="jumbotron-content__title">{{ banner.bigText }}</h1>
                                 <div class="jumbotron-content__description">
                                     <p>
                                         {{ banner.smallText }}
                                     </p>
                                     <p>
-                                        <a class="btn btn-primary" href="{{ banner.buttonUrl }}" target="_self">{{ banner.buttonText | upper}}</a>
+                                        <a class="btn btn-primary" href="{{ banner.buttonUrl }}" target="_self">{{ banner.buttonText}}</a>
                                         <a class="btn btn-tertiary" href="{% url 'services' %}" target="_self">Услуги</a>
                                     </p>
                                 </div><!-- /.jumbotron-content__description -->
@@ -331,7 +331,7 @@
                 <div class="col-md-12">
                     <div class="call-to-action__text">
                         <h4 class="call-to-action__title">
-                            Вам нужны проффесионалы в сфере подготовки документации?
+                            Вам нужны профессионалы в сфере подготовки документации?
                         </h4>
                         {#							<p class="call-to-action__subtitle">#}
                         {#								We offer the best engineers and builders to make your dreams come true.#}
