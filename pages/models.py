@@ -63,8 +63,8 @@ class Service(models.Model):
 
 
 class Project(models.Model):
-    customer = models.CharField('Заказчик', max_length=40, blank=True, null=True)
-    name = models.CharField('Название проекта ', max_length=255, blank=False, null=True)
+    customer = models.CharField('Название проекта', max_length=40, blank=True, null=True)
+    name = models.CharField('Заказчик ', max_length=255, blank=False, null=True)
     image = models.ImageField('Изображение (360 x 240)', upload_to='service_img/', blank=True)
     town = models.CharField('Город', max_length=40, blank=True, null=True)
 
