@@ -20,85 +20,58 @@
 
 
 {% block content %}
-  <div class="page-header">
-			<div class="container">
-				<h1 class="page-header__title  display-1">О нас</h1>
-			</div>
-		</div><!-- /.page-header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-header__title  display-1">О нас</h1>
+        </div>
+    </div><!-- /.page-header -->
 
-		<div class="breadcrumbs">
-
-			<div class="container">
-
-				<span typeof="v:Breadcrumb">
-					<a rel="v:url" property="v:title" title="Go to StructurePress." href="{% url 'index' %}" class="home">Главная</a>
+    <div class="breadcrumbs">
+        <div class="container" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="{% url 'index' %}" class="home">Главная</a>
 				</span>
-				<span typeof="v:Breadcrumb">
-					<span property="v:title">О нас</span>
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<span itemprop="name">О нас</span>
 				</span>
+        </div><!-- /.container -->
+    </div><!-- /.breadcrumbs -->
 
-			</div><!-- /.container -->
-
-		</div><!-- /.breadcrumbs -->
-
-		<div class="container margin-bottom-30">
-
-			<div class="row">
-
-				<main id="main" class="site-main  col-xs-12  col-lg-12 " role="main">
-
-					<div class="row margin-bottom-30">
-
-						<div class="col-md-6">
-
-							<p><span style="display: block">Проверенный коллектив</span>
-
-Мы работаем устоявшимся коллективом, в который входят только настоящие специалисты. Благодаря такому подходу наши заказчики получают качественную поддержку в сфере документооборота и геодезического сопровождения в строительстве.
-							</p>
-
-
-							<p><span>Соответствие всем актуальным нормам и стандартам ГОСТ, СНИП, СП, ФЗ, РД</span>
-
-
-Конечной точкой нашего труда являются документы, подготовленные в соответствии со всеми современными стандартами качества. Мы отслеживаем все последние изменения нормативной документации в строительстве.
-                            <p><span>Результат сотрудничества</span>
-
-Выбирая нас, Вы выбираете работу в команде, где каждый участник в первую очередь работает на результат, двигаясь к конкретной цели - законченному проекту и заказчику, которому запомнится этот опыт как лучшее обращение к наёмным специалистам.
-                             </p>
-						</div><!-- /.col -->
-
-						<div class="col-md-6">
-
-							<p>
-								<a data-featherlight="image" href="{% static 'images/about1.webp' %}">
-									<img class="alignnone" src="{% static 'images/about1.webp' %}" alt="26" height="420" width="840">
-								</a>
-							</p>
-
-							<p>
-								<a data-featherlight="image" href="{% static 'images/about2.webp' %}">
-									<img class="alignnone" src="{% static 'images/about2.webp' %}" alt="38" height="420" width="840">
-								</a>
-							</p>
-
-                            <p>
-								<a data-featherlight="image" href="{% static 'images/about3.webp' %}">
-									<img class="alignnone" src="{% static 'images/about3.webp' %}" alt="38" height="420" width="840">
-								</a>
-							</p>
-
-						</div><!-- /.col -->
-
-					</div><!-- /.row -->
-
-				</main>
-
-
-
-			</div><!-- /.row -->
-
-		</div><!-- /.container -->
-
+    <div class="container margin-bottom-30">
+        <div class="row">
+            <main id="main" class="site-main  col-xs-12  col-lg-12 " role="main">
+                <div class="row margin-bottom-30">
+                    <div class="col-md-6">
+                        <p><span style="display: block">Проверенный коллектив</span>
+                            Мы работаем устоявшимся коллективом, в который входят только настоящие специалисты. Благодаря такому подходу наши заказчики получают качественную поддержку в сфере документооборота и геодезического сопровождения в строительстве.
+                        </p>
+                        <p><span>Соответствие всем актуальным нормам и стандартам ГОСТ, СНИП, СП, ФЗ, РД</span>
+                            Конечной точкой нашего труда являются документы, подготовленные в соответствии со всеми современными стандартами качества. Мы отслеживаем все последние изменения нормативной документации в строительстве.
+                        <p><span>Результат сотрудничества</span>
+                            Выбирая нас, Вы выбираете работу в команде, где каждый участник в первую очередь работает на результат, двигаясь к конкретной цели - законченному проекту и заказчику, которому запомнится этот опыт как лучшее обращение к наёмным специалистам.
+                        </p>
+                    </div><!-- /.col -->
+                    <div class="col-md-6">
+                        <p>
+                            <a data-featherlight="image" href="{% static 'images/about1.webp' %}">
+                                <img class="alignnone" src="{% static 'images/about1.webp' %}" alt="26" height="420" width="840">
+                            </a>
+                        </p>
+                        <p>
+                            <a data-featherlight="image" href="{% static 'images/about2.webp' %}">
+                                <img class="alignnone" src="{% static 'images/about2.webp' %}" alt="38" height="420" width="840">
+                            </a>
+                        </p>
+                        <p>
+                            <a data-featherlight="image" href="{% static 'images/about3.webp' %}">
+                                <img class="alignnone" src="{% static 'images/about3.webp' %}" alt="38" height="420" width="840">
+                            </a>
+                        </p>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </main>
+        </div><!-- /.row -->
+    </div><!-- /.container -->
 {% endblock %}
 
 {% block js %}

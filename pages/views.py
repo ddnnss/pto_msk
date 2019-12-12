@@ -99,7 +99,7 @@ def service(request, slug):
     return render(request, 'pages/service.html', locals())
 def robots(request):
 
-    robotsTxt = f"User-agent: *\nDisallow: /admin/\nHost: locaclhost\nSitemap: localhost/sitemap.xml"
+    robotsTxt = f"User-agent: *\nDisallow: /admin/\nHost: https://www.pto-msk.ru\nSitemap: https://www.pto-msk.ru/sitemap.xml"
 
     return HttpResponse(robotsTxt, content_type="text/plain")
 

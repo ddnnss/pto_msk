@@ -20,67 +20,45 @@
 
 
 {% block content %}
-  <div class="page-header">
-			<div class="container">
-				<h1 class="page-header__title  display-1">Наши проекты (ведение исполнительной по объектам)</h1>
-
-			</div>
-		</div><!-- /.page-header -->
-
-		<div class="breadcrumbs">
-
-			<div class="container">
-
-				<span typeof="v:Breadcrumb">
-					<a rel="v:url" property="v:title" title="Go to StructurePress." href="{% url 'index' %}" class="home">Главная</a>
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-header__title  display-1">Наши проекты (ведение исполнительной по объектам)</h1>
+        </div>
+    </div><!-- /.page-header -->
+    <div class="breadcrumbs">
+        <div class="container" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="{% url 'index' %}" class="home">Главная</a>
 				</span>
-				<span typeof="v:Breadcrumb">
-					<span property="v:title">Наши проекты</span>
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<span itemprop="name">Наши проекты</span>
 				</span>
-
-			</div><!-- /.container -->
-
-		</div><!-- /.breadcrumbs -->
-
-		<div class="container">
-
-			<div class="row margin-bottom-60">
-
-				<div class="col-lg-12">
-
-					<div class="portfolio-grid  portfolio-grid--grid" data-type="grid">
-
-
-
-						<div class="js-wpg-items">
-
-							<div class="row">
-                                {% for project in allProjects %}
-
-								<div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="gardening">
-									<a class="card  portfolio-grid__card js-wpg-card" href="#">
-										<img src="{{ project.image.url }}" class="card-img-top portfolio-grid__card-img wp-post-image" alt="19" height="240" width="360">
-										<div style="min-height: 120px;" class="card-block portfolio-grid__card-block">
-											<h5>{{ project.customer }}</h5>
+        </div><!-- /.container -->
+    </div><!-- /.breadcrumbs -->
+    <div class="container">
+        <div class="row margin-bottom-60">
+            <div class="col-lg-12">
+                <div class="portfolio-grid  portfolio-grid--grid" data-type="grid">
+                    <div class="js-wpg-items">
+                        <div class="row">
+                            {% for project in allProjects %}
+                                <div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="gardening">
+                                    <a class="card  portfolio-grid__card js-wpg-card" href="#">
+                                        <img src="{{ project.image.url }}" class="card-img-top portfolio-grid__card-img wp-post-image" alt="{{ project.name }}" height="240" width="360">
+                                        <div style="min-height: 120px;" class="card-block portfolio-grid__card-block">
+                                            <h5>{{ project.customer }}</h5>
                                             <span style="font-weight: 600;    font-size: 13px;    color: #000;">{{ project.town }}</span>
-											<p>{{ project.name }}</p>
-										</div>
-									</a>
-								</div><!-- /.col -->
-                                {% endfor %}
-
-
-							</div><!-- /.row -->
-
-						</div><!-- /.js-wpg-items -->
-
-					</div><!-- /.portfolio-grid -->
-
-				</div><!-- /.col -->
-
-			</div><!-- /.row -->
-
-		</div><!-- /.container -->
+                                            <p>{{ project.name }}</p>
+                                        </div>
+                                    </a>
+                                </div><!-- /.col -->
+                            {% endfor %}
+                        </div><!-- /.row -->
+                    </div><!-- /.js-wpg-items -->
+                </div><!-- /.portfolio-grid -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
 {% endblock %}
 
 {% block js %}

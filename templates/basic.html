@@ -1,14 +1,13 @@
 {% load static %}
 <!DOCTYPE html>
-<!-- SKIBORG WAS HERE -->
+<!-- SKIB.ORG  -->
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/cropped-favicon-32x32.png" sizes="32x32">
-    <link rel="icon" href="images/cropped-favicon-192x192.png" sizes="192x192">
-    <link rel="apple-touch-icon-precomposed" href="images/cropped-favicon-180x180.png">
-    <meta name="msapplication-TileImage" content="images/cropped-favicon-270x270.png">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" >
+    <link rel="apple-touch-icon-precomposed" href="{% static 'images/favicon.ico' %}">
+    <meta name="msapplication-TileImage" content="{% static 'images/favicon.ico' %}">
     <title>{% block title %}  {{ pageTitle }} {% endblock %} </title>
     <meta name="keywords" content="{% block keywords %}  {{ pageKeywords }} {% endblock %}">
     <meta name="description" content="{% block description %} {{ pageDescription }} {% endblock %}"/>
