@@ -84,12 +84,14 @@
                         <a class="page-box__picture" href="{% url 'service' service.nameSlug %}">
                             <img src="{{ service.image.url }}" width="360" height="240" srcset="{{ service.image.url }} 360w, {{ service.image.url }} 840w" sizes="(min-width: 992px) 360px, calc(100vw - 30px)" alt="{{ service.name }}">
                         </a>
-                        <div class="page-box__content">
+                        <div style="border-bottom: 1px solid; margin-bottom: 10px;" class="page-box__content">
                             <h4 class="page-box__title"><a href="{% url 'service' service.nameSlug %}">{{ service.name }}</a></h4>
                             <p class="page-box__text">
                                 {{ service.short_description }}
                             </p>
+
                         </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center"><p style="display: inline-block;color: #333333;font-weight: 600; margin: 0;" >от 20000 руб</p><a class="btn btn-sm btn-primary">Заказать</a></div>
                     </div><!-- /.col -->
                 {% endfor %}
             </div><!-- /.row -->

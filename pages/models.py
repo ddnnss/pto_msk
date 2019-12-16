@@ -83,6 +83,7 @@ class Callback(models.Model):
     email = models.CharField('Почта', max_length=255, blank=True, default='Нет данных')
     service = models.CharField('Услуга', max_length=255, blank=True, default='Нет данных')
     message = models.TextField('Сообщение', blank=True, default='Нет данных')
+    file = models.FileField('Прикрепленный файл',blank=True,null=True)
     created_at = models.DateTimeField('Дата заполнения', auto_now_add=True)
 
 

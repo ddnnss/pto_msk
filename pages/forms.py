@@ -11,5 +11,6 @@ class CallbackForm(ModelForm):
             'phone',
             'email',
             'service',
-            'message'
+            'message',
+            'file'
         )

@@ -6,13 +6,15 @@ from .forms import *
 
 
 def callback(request):
+    print(request.POST)
     if request.POST:
         req = request.POST
-        form = CallbackForm(request.POST)
+        form = CallbackForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'Спасибо, форма успешно отправлена')
-            return HttpResponseRedirect('/contacts/')
+
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         form = CallbackForm()
     return render(request, 'pages/contacts.html', locals())
@@ -97,6 +99,7 @@ def contacts(request):
 
 
 def service(request, slug):
+    form = CallbackForm()
     allSevices = Service.objects.filter(isHomeVisible=True)
     curService = get_object_or_404(Service, nameSlug=slug)
     serviceActive = 'current-menu-item'
