@@ -80,7 +80,7 @@
         <div class="container">
             <div class="row">
                 {% for service in allSevices %}
-                    <div class="col-lg-4 page-box--block">
+                    <div style="margin-bottom: 20px" class="col-lg-4 page-box--block m-b">
                         <a class="page-box__picture" href="{% url 'service' service.nameSlug %}">
                             <img src="{{ service.image.url }}" width="360" height="240" srcset="{{ service.image.url }} 360w, {{ service.image.url }} 840w" sizes="(min-width: 992px) 360px, calc(100vw - 30px)" alt="{{ service.name }}">
                         </a>
