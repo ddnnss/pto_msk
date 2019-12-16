@@ -24,6 +24,7 @@
         <div class="container">
             <h1 class="page-header__title  display-1">{{ curService.name }}</h1>
         </div>
+
     </div><!-- /.page-header -->
     <div class="breadcrumbs">
         <div class="container" itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -39,13 +40,77 @@
         </div><!-- /.container -->
     </div><!-- /.breadcrumbs -->
     <div class="container margin-bottom-30">
+
         <div class="row">
+
             <main id="main" class="site-main  col-xs-12  col-lg-9  col-lg-push-3" role="main">
+                <div class="portfolio-grid__card portfolio-grid__card--dummy js-wpg-card" href="projects/">
+										<div class="portfolio-grid__card-block text-center">
+
+											<h5>Специальное предложение</h5>
+
+										</div>
+									</div>
                 <div class="row margin-bottom-30">
                     <div class="col-md-12">
                         {{ curService.description | safe }}
                     </div><!-- /.col -->
                 </div><!-- /.row -->
+
+                     <div class="col-lg-12">
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags %}  <div style="margin-bottom: 10px; color: green;">{% endif %} <strong> {{ message }}</strong>    </div>
+                    {% endfor %}
+                {% endif %}
+                <div role="form" class="contact">
+                    <form data-toggle="validator" method="post" action="{% url 'callback' %}" class="contact-form aSubmit">{% csrf_token %}
+                        <div style="display:none"><input type="text" name="maximus" value=""></div>
+                        <input type="hidden" name="theSubject" value="StructurePress Contact Request">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+									<span class="contact-form-control-wrap name">
+										<input name="{{ form.name.name }}" value="" size="40" class="contact-form-control contact-text contact-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Ваше имя *" type="text" required>
+									</span>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+									<span class="contact-form-control-wrap surname">
+										<input name="{{ form.phone.name }}" value="" size="40" class="contact-form-control contact-text contact-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Телефон *" type="text" required>
+									</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+									<span class="contact-form-control-wrap email">
+										<input name="{{ form.email.name }}" value="" size="40" class="contact-form-control contact-text contact-email contact-validates-as-required contact-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="E-mail" type="email" >
+									</span>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+									<span class="contact-form-control-wrap service">
+                                        <select name="{{ form.service.name }}" disabled class="contact-form-control contact-text form-control">
+
+                                            {% for service in allSevices %}
+                                                <option {% if curService.name == service.name %} selected {% endif %} value="{{ service.name }}">{{ service.name }}</option>
+                                            {% endfor %}
+                                        </select>
+									</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+									<span class="contact-form-control-wrap your-message">
+										<textarea name="{{ form.message.name }}" cols="40" rows="10" class="contact-form-control contact-textarea form-control" aria-invalid="false" placeholder="Сообщение" ></textarea>
+									</span>
+                                <p></p>
+                                <div class="contact-notice">Поля отмеченные * обязательны для заполнения</div>
+                                <p>
+                                    <input value="Отправить" class="contact-form-control contact-submit btn btn-primary" type="submit">
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.col -->
             </main>
             <div class="col-xs-12  col-lg-3  col-lg-pull-9">
                 <div class="sidebar widget widget_nav_menu" role="complementary">

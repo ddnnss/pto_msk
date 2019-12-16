@@ -33,6 +33,7 @@ class Service(models.Model):
     nameSlug = models.CharField(max_length=255, blank=True, null=True)
     image = models.ImageField('Изображение превью (360 x 240)', upload_to='service_img/', blank=False)
     pageH1 = models.CharField('Тег H1', max_length=255, blank=True, null=True)
+    pageSpecialText = models.CharField('Специальное предложение', max_length=255, blank=True, null=True)
     pageTitle = models.CharField('Название страницы SEO', max_length=255, blank=True, null=True)
     pageDescription = models.CharField('Описание страницы SEO', max_length=255, blank=True, null=True)
     pageKeywords = models.TextField('Keywords SEO', blank=True, null=True)

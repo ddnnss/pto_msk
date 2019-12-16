@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import *
 from .forms import *
 
+
 def callback(request):
     if request.POST:
         req = request.POST
@@ -15,6 +16,7 @@ def callback(request):
     else:
         form = CallbackForm()
     return render(request, 'pages/contacts.html', locals())
+
 
 def index(request):
     allBanners = Banner.objects.filter(isActive=True).order_by('order')
@@ -30,6 +32,8 @@ def index(request):
         pageDescription = 'НЕ ЗАПОЛНЕНА ТАБЛИЦА СЕО ТЕГИ'
         pageKeywords = 'НЕ ЗАПОЛНЕНА ТАБЛИЦА СЕО ТЕГИ'
     return render(request, 'pages/index.html', locals())
+
+
 def about(request):
     allSevices = Service.objects.filter(isHomeVisible=True)
     aboutActive = 'current-menu-item'
@@ -43,6 +47,7 @@ def about(request):
         pageDescription = 'НЕ ЗАПОЛНЕНА ТАБЛИЦА СЕО ТЕГИ'
         pageKeywords = 'НЕ ЗАПОЛНЕНА ТАБЛИЦА СЕО ТЕГИ'
     return render(request, 'pages/about.html', locals())
+
 
 def projects(request):
     try:
@@ -58,6 +63,7 @@ def projects(request):
     allProjects = Project.objects.all()
     projectsActive = 'current-menu-item'
     return render(request, 'pages/projects.html', locals())
+
 
 def services(request):
     try:
@@ -89,6 +95,7 @@ def contacts(request):
         pageKeywords = 'НЕ ЗАПОЛНЕНА ТАБЛИЦА СЕО ТЕГИ'
     return render(request, 'pages/contacts.html', locals())
 
+
 def service(request, slug):
     allSevices = Service.objects.filter(isHomeVisible=True)
     curService = get_object_or_404(Service, nameSlug=slug)
@@ -97,8 +104,9 @@ def service(request, slug):
     pageDescription = curService.pageDescription
     pageKeywords = curService.pageKeywords
     return render(request, 'pages/service.html', locals())
-def robots(request):
 
+
+def robots(request):
     robotsTxt = f"User-agent: *\nDisallow: /admin/\nHost: https://www.pto-msk.ru\nSitemap: https://www.pto-msk.ru/sitemap.xml"
 
     return HttpResponse(robotsTxt, content_type="text/plain")
