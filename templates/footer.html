@@ -101,3 +101,49 @@
 			</div><!-- /.footer-bottom -->
 
 		</footer>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+        <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 style="margin: 0; font-size: 1.5rem">Пришлите нам техзадание и получите оперативный расчет стоимости и сроков</h3>
+                    <p>Прикрепите файл, созданный в любом редакторе, и мы подготовим расчет</p>
+                </div><!-- /.col -->
+                  <div class="col-lg-12">
+
+                <div role="form" class="contact">
+                    <form data-toggle="validator" method="post" action="{% url 'callback' %}" class="contact-form aSubmit" enctype="multipart/form-data">{% csrf_token %}
+                        <div style="display:none"><input type="text" name="maximus" value=""></div>
+                        <input type="hidden" name="theSubject" value="StructurePress Contact Request">
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-4">
+									<span class="contact-form-control-wrap email">
+										<input style="margin-bottom: 0" name="{{ form.name.name }}" value="" size="40" class="contact-form-control contact-text contact-email contact-validates-as-required contact-validates-as-email form-control" aria-required="true"  aria-invalid="false" placeholder="Ваше имя" type="text" >
+									</span>
+                            </div>
+                             <div class="col-xs-12 col-md-4">
+									<span class="contact-form-control-wrap email">
+										<input style="margin-bottom: 0" name="{{ form.phone.name }}" value="" size="40" class="phone-field contact-form-control contact-text contact-email contact-validates-as-required contact-validates-as-email form-control" aria-required="true" required aria-invalid="false" placeholder="Телефон" type="text" >
+									</span>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <button style="width: 100%" class="contact-form-control  btn btn-primary" type="submit">ЖДУ ЗВОНКА</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div><!-- /.col -->
+            </div><!-- /.row -->
+
+
+  </div>
+
+</div>

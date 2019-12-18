@@ -91,7 +91,7 @@
                             </p>
 
                         </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center"><p style="display: inline-block;color: #333333;font-weight: 600; margin: 0;" >от {{ service.price }} руб</p><a href="{% url 'service' service.nameSlug %}" class="btn btn-sm btn-primary">Заказать</a></div>
+                    <div style="display: flex; justify-content: space-between; align-items: center"><p style="display: inline-block;color: #333333;font-weight: 600; margin: 0;" >от {{ service.price }} руб</p><a href="javascript: void(0)" onclick="openModal('{{ service.name }}')" class="btn btn-sm btn-primary">Заказать</a></div>
                     </div><!-- /.col -->
                 {% endfor %}
             </div><!-- /.row -->

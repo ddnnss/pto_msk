@@ -24,6 +24,7 @@ def index(request):
     allBanners = Banner.objects.filter(isActive=True).order_by('order')
     allSevices = Service.objects.filter(isHomeVisible=True)
     homeActive = 'current-menu-item'
+    form = CallbackForm()
     try:
         seotag = SeoTag.objects.first()
         pageTitle = seotag.indexTitle
