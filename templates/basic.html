@@ -58,6 +58,12 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal
  function openModal(type) {
   modal.style.display = "block";
+  document.getElementById('service_name').value = type
+}
+
+function sendS(){
+     document.getElementById('modal_form').style.display = 'none'
+    document.getElementById('modal_header').innerText = 'Спасибо за обращение, с Вами обязательно свяжутся'
 }
 
 // When the user clicks on <span> (x), close the modal

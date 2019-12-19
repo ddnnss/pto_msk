@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib import messages
 from .models import *
 from .forms import *
@@ -13,7 +13,6 @@ def callback(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Спасибо, форма успешно отправлена')
-
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         form = CallbackForm()

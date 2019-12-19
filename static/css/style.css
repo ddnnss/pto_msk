@@ -3345,6 +3345,7 @@ body.bg4 { background-image: url(../images/4.png) }
 
 /* Modal Content/Box */
 .modal-content {
+  position: relative;
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
@@ -3354,6 +3355,9 @@ body.bg4 { background-image: url(../images/4.png) }
 
 /* The Close Button */
 .close {
+  right: 20px;
+    top: 10px;
+    position: absolute;
   color: #aaa;
   float: right;
   font-size: 28px;
