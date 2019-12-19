@@ -3362,6 +3362,7 @@ body.bg4 { background-image: url(../images/4.png) }
   float: right;
   font-size: 28px;
   font-weight: bold;
+  z-index: 1;
 }
 
 .close:hover,

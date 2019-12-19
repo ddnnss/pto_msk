@@ -58,7 +58,9 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal
  function openModal(type) {
   modal.style.display = "block";
+ // document.getElementById('modal_btn').innerText = `Заказать ${type}`
   document.getElementById('service_name').value = type
+
 }
 
 function sendS(){
