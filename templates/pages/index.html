@@ -1,7 +1,7 @@
 {% extends  'basic.html' %}
 {% load static %}
 {% block title %}
-    {{ block.super }} - ГЛАВНАЯ
+    {{ block.super }}
 {% endblock %}
 {% block keywords %}
     {{ block.super }}
@@ -114,6 +114,13 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
     </section><!-- /.cta -->
+    {% if indexText %}
+    <section style="margin-bottom: 50px;" class="index-text">
+     <div class="container">
+     {{ indexText | safe }}
+     </div>
+    </section>
+    {% endif %}
     <section class="promise">
         <div class="container">
             <div class="row">
@@ -132,25 +139,25 @@
                     <h3 class="widget-title"><span>Наши заказчики</span></h3>
                     <div class="owl-carousel">
                         <div style="    height: 250px;   display: flex; align-items: center;">
-                            <img src="{% static 'images/1.png' %}" alt="">
+                            <img src="{% static 'images/1.png' %}" alt="Лужники">
                         </div>
                         <div style="    height: 250px;   display: flex; align-items: center;">
-                            <img src="{% static 'images/2.png' %}" alt="">
+                            <img src="{% static 'images/2.png' %}" alt="Мужик на коне">
                         </div>
                         <div style="    height: 250px;   display: flex; align-items: center;">
-                            <img src="{% static 'images/3.png' %}" alt="">
+                            <img src="{% static 'images/3.png' %}" alt="Метро">
                         </div>
                         <div style="    height: 250px;   display: flex; align-items: center;">
-                            <img src="{% static 'images/4.png' %}" alt="">
+                            <img src="{% static 'images/4.png' %}" alt="Лидер инвест">
                         </div>
                         <div style="    height: 250px;   display: flex; align-items: center;">
-                            <img src="{% static 'images/5.png' %}" alt="">
+                            <img src="{% static 'images/5.png' %}" alt="Ingrad">
                         </div>
                         <div style="    height: 250px;   display: flex; align-items: center;">
-                            <img src="{% static 'images/6.png' %}" alt="">
+                            <img src="{% static 'images/6.png' %}" alt="Ржд">
                         </div>
                         <div style="    height: 250px;   display: flex; align-items: center;">
-                            <img src="{% static 'images/7.png' %}" alt="">
+                            <img src="{% static 'images/7.png' %}" alt="ФОДД">
                         </div>
                     </div>
                 </div><!-- /.logo-panel -->

@@ -46,7 +46,7 @@ class Service(models.Model):
         slug = slugify(self.name)
         testSlug = Service.objects.filter(nameSlug=slug)
         slugRandom = ''
-        if testSlug:
+        if not testSlug:
             slugRandom = '-' + ''.join(choices(string.ascii_lowercase + string.digits, k=2))
         self.nameSlug = slug + slugRandom
         self.name_lower = self.name.lower()
@@ -125,9 +125,11 @@ class SeoTag(models.Model):
     yandexTAG = models.CharField('Код подтверждения Яндекс', max_length=255, blank=True, null=True)
     googleTAG = models.CharField('Код подтверждения google', max_length=255, blank=True, null=True)
 
+    indexText = RichTextUploadingField('Текст на главную', blank=True, null=True)
+
     def __str__(self):
-        return 'Теги для статических страниц'
+        return 'Теги и текста для статических страниц'
 
     class Meta:
-        verbose_name = "Теги для статических страниц"
-        verbose_name_plural = "Теги для статических страниц"
+        verbose_name = "Теги и текста для статических страниц"
+        verbose_name_plural = "Теги и текста для статических страниц"

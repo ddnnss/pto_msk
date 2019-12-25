@@ -26,6 +26,8 @@ def index(request):
     form = CallbackForm()
     try:
         seotag = SeoTag.objects.first()
+        indexText = seotag.indexText
+
         pageTitle = seotag.indexTitle
         pageDescription = seotag.indexDescription
         pageKeywords = seotag.indexKeywords
