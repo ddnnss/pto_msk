@@ -7,13 +7,18 @@ from .forms import *
 
 def callback(request):
     print(request.POST)
+    print(request.POST.get('age') == '')
     if request.POST:
-        req = request.POST
-        form = CallbackForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Спасибо, форма успешно отправлена')
-            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        if request.POST.get('age') == '' and request.POST.get('message') == '' and request.POST.get('agree') != 'on':
+            print('form is ok')
+            req = request.POST
+            form = CallbackForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Спасибо, форма успешно отправлена')
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        else:
+            print('bad form')
     else:
         form = CallbackForm()
     return render(request, 'pages/contacts.html', locals())
