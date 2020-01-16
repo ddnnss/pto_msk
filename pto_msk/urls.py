@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from django.conf import settings
+import pto_msk.settings
 from django.conf.urls.static import static
 from pages.sitemaps import *
 from django.contrib.sitemaps.views import sitemap
@@ -20,4 +20,4 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(pto_msk.settings.MEDIA_URL, document_root=pto_msk.settings.MEDIA_ROOT)

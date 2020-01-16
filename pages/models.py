@@ -1,8 +1,13 @@
+from django.core.mail import send_mail
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.db.models.signals import post_save
+from django.template.loader import render_to_string
 from pytils.translit import slugify
 from random import choices
 import string
+
+import settings
 
 
 class Banner(models.Model):
@@ -133,3 +138,15 @@ class SeoTag(models.Model):
     class Meta:
         verbose_name = "Теги и текста для статических страниц"
         verbose_name_plural = "Теги и текста для статических страниц"
+
+def callback_ps(sender, instance, **kwargs):
+    msg_html = render_to_string('email/callback.html', {'user': instance.name,
+                                                        'phone': instance.phone,
+                                                        'email': instance.email,
+                                                        'service': instance.service,
+                                                        'message': instance.message,
+                                                        'file': instance.file})
+    send_mail('Заполнена форма обратной связи', None, 'callback@pto-msk.com', [settings.SEND_TO],
+              fail_silently=False, html_message=msg_html)
+
+post_save.connect(callback_ps, sender=Callback)

@@ -9,7 +9,7 @@ def callback(request):
     print(request.POST)
     print(request.POST.get('age') == '')
     if request.POST:
-        if request.POST.get('age') == '' and request.POST.get('message') == '' and request.POST.get('agree') != 'on':
+        if request.POST.get('age') == '' and request.POST.get('messages') == '' and request.POST.get('agree') != 'on':
             print('form is ok')
             req = request.POST
             form = CallbackForm(request.POST, request.FILES)
