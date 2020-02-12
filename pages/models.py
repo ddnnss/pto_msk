@@ -141,11 +141,11 @@ class ProjectImage(models.Model):
             image = background
 
         image.thumbnail((250, 250), Image.ANTIALIAS)
-        small_name = 'media/project_img/{}/{}'.format(self.project.id, str(uuid.uuid4()) + '.jpg')
+        small_name = '/media/project_img/{}/{}'.format(self.project.id, str(uuid.uuid4()) + '.jpg')
         os.makedirs('{}/media/project_img/{}'.format(pto_msk.settings.BASE_DIR,self.project.id), exist_ok=True)
         image.save(small_name, 'JPEG', quality=90)
 
-        self.image_small = '/' + small_name
+        self.image_small =  small_name
 
         super(ProjectImage, self).save(*args, **kwargs)
 
