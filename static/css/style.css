@@ -3373,7 +3373,7 @@ body.bg4 { background-image: url(../images/4.png) }
 }
 
     .shema{
-            padding-top: 70px;
+            padding-bottom: 70px;
         }
         .shema-bottom{
             text-align: center;
@@ -3467,7 +3467,9 @@ body.bg4 { background-image: url(../images/4.png) }
             max-width: 720px;
             margin: 0 auto;
         }
-
+        .counter-item{
+          flex-basis: 20%;
+        }
         .counter-item p{
             font: 18px 'Roboto', sans-serif;
         }

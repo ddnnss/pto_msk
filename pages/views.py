@@ -74,6 +74,21 @@ def projects(request):
     return render(request, 'pages/projects.html', locals())
 
 
+def project(request,slug):
+    try:
+        seotag = SeoTag.objects.first()
+        pageTitle = seotag.projectsTitle
+        pageDescription = seotag.projectsDescription
+        pageKeywords = seotag.projectsKeywords
+    except:
+        pageTitle = 'НЕ ЗАПОЛНЕНА ТАБЛИЦА СЕО ТЕГИ'
+        pageDescription = 'НЕ ЗАПОЛНЕНА ТАБЛИЦА СЕО ТЕГИ'
+        pageKeywords = 'НЕ ЗАПОЛНЕНА ТАБЛИЦА СЕО ТЕГИ'
+    curProject = get_object_or_404(Project, nameSlug=slug)
+    pageH1 = curProject.pageH1
+    projectsActive = 'current-menu-item'
+    return render(request, 'pages/project.html', locals())
+
 def services(request):
     try:
         seotag = SeoTag.objects.first()
@@ -110,6 +125,7 @@ def service(request, slug):
     allSevices = Service.objects.filter(isHomeVisible=True)
     curService = get_object_or_404(Service, nameSlug=slug)
     serviceActive = 'current-menu-item'
+    pageH1 = curService.pageH1
     pageTitle = curService.pageTitle
     pageDescription = curService.pageDescription
     pageKeywords = curService.pageKeywords

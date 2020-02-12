@@ -1,0 +1,56 @@
+{% extends  'basic.html' %}
+{% load static %}
+
+{% block title %}
+    {{ pageTitle }}
+{% endblock %}
+
+{% block keywords %}
+    {{ pageKeywords }}
+{% endblock %}
+
+{% block description %}
+    {{ pageDescription }}
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+{% endblock %}
+
+
+
+{% block content %}
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-header__title  display-1">{% if pageH1 %}{{ pageH1 }}{% else %}{{ curProject.customer }}{% endif %}</h1>
+        </div>
+    </div><!-- /.page-header -->
+
+    <div class="breadcrumbs">
+        <div class="container" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="{% url 'index' %}" class="home">Главная</a>
+				</span>
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="{% url 'projects' %}" >Проекты</a>
+				</span>
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<span itemprop="name">{{ curProject.customer }}</span>
+				</span>
+        </div><!-- /.container -->
+    </div><!-- /.breadcrumbs -->
+
+    <div class="container margin-bottom-30">
+        <div class="row">
+            <main id="main" class="site-main  col-xs-12  col-lg-12 " role="main">
+                <div class="row margin-bottom-30">
+                  {{ curProject.description | safe }}
+                </div><!-- /.row -->
+            </main>
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+{% endblock %}
