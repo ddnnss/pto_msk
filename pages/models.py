@@ -7,7 +7,7 @@ from pytils.translit import slugify
 from random import choices
 import string
 
-import settings
+#import settings
 
 
 class Banner(models.Model):

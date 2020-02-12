@@ -1,6 +1,6 @@
 import os
 
-import settings
+#import settings
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -8,10 +8,10 @@ SECRET_KEY = '4=a+1m5e69y=z$pm90slhlx)z%(bb%32f7u3udgz@q8&^seqw%'
 DEBUG = True
 APPEND_SLASH = True
 PREPEND_WWW = True
-EMAIL_HOST = settings.SMTP_HOST
-EMAIL_HOST_USER = settings.SMTP_LOGIN
-EMAIL_HOST_PASSWORD = settings.SMTP_PASSWORD
-EMAIL_PORT = settings.SMTP_PORT
+# EMAIL_HOST = settings.SMTP_HOST
+# EMAIL_HOST_USER = settings.SMTP_LOGIN
+# EMAIL_HOST_PASSWORD = settings.SMTP_PASSWORD
+# EMAIL_PORT = settings.SMTP_PORT
 EMAIL_USE_TLS = True
 ALLOWED_HOSTS = ['*']
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"

@@ -3372,6 +3372,112 @@ body.bg4 { background-image: url(../images/4.png) }
   cursor: pointer;
 }
 
+    .shema{
+            padding-top: 70px;
+        }
+        .shema-bottom{
+            text-align: center;
+        }
+        .block9{
+	padding: 65px 0 58px 0;
+}
+.block9_title{
+	font-family: 'Roboto';
+	font-size: 40px;
+	text-transform: uppercase;
+	margin-left: -6px;
+	line-height: 48px;
+	text-align: center;
+}
+.block9_title span{
+	color: #fbb12a;
+	display: block;
+	font-size: 32px;
+}
+.block9_img{
+	position: relative;
+	font-family: 'Roboto';
+	width: 838px;
+	margin: 33px auto 0;
+	font-size: 18px;
+	text-transform: uppercase;
+	padding-bottom: 70px;
+    margin-bottom: 70px;
+}
+.block9_img_text1{
+	position: absolute;
+	top: 173px;
+	left: -47px;
+}
+.block9_img_text2{
+	position: absolute;
+	top: 173px;
+	left: 297px;
+	width: 240px;
+	text-align: center;
+}
+.block9_img_text3{
+	position: absolute;
+	top: 173px;
+	right: -30px;
+	width: 200px;
+	text-align: center;
+}
+.block9_img_text4{
+	position: absolute;
+	left: -3px;
+	top: 422px;
+	width: 140px;
+	text-align: center;
+}
+.block9_img_text5{
+	position: absolute;
+	left: 321px;
+	top: 422px;
+	text-align: center;
+	width: 190px;
+}
+.block9_img_text6{
+	position: absolute;
+	right: -50px;
+	top: 423px;
+	width: 244px;
+	text-align: center;
+}
+.block9_link{
+	color: #fff;
+	background: #fbb12a;
+	width: 309px;
+	font-size: 25px;
+	text-align: center;
+	height: 65px;
+	line-height: 65px;
+	border: none;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin: 18px auto;
+	display: block;
+	font-family: 'Roboto';
+}
+
+        .counter-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .counter-item p{
+            font: 18px 'Roboto', sans-serif;
+        }
+
+        .counter-item span{
+            font: 40px 'Roboto', sans-serif;
+            color: #333333;
+        }
+
+
 /*------------------------------------*\
 	The End :)
 \*------------------------------------*/
