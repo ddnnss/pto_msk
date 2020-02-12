@@ -44,13 +44,31 @@
         <div class="row">
             <main id="main" class="site-main  col-xs-12  col-lg-12 " role="main">
                 <div class="row margin-bottom-30">
-                  {{ curProject.description | safe }}
+                    {{ curProject.description | safe }}
                 </div><!-- /.row -->
+                {% if allImg %}
+                    <ul style=" text-align: center;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));list-style: none" class="gallery-wrapper">
+                        {% for img in allImg %}
+                            <li>
+                                <a class="gallery-demo" href="{{ img.image.url}}">
+                                    <img src="{{ img.image_small }}" alt="{{ curProject.name }}">
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </main>
         </div><!-- /.row -->
     </div><!-- /.container -->
+
 {% endblock %}
 
 {% block js %}
     {{ block.super }}
+    <script>
+        new LuminousGallery(document.querySelectorAll(".gallery-demo"));
+    </script>
 {% endblock %}

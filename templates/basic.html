@@ -22,8 +22,70 @@
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css" media="all">
    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}" type="text/css" media="all">
     <link rel="stylesheet" href="{% static 'css/featherlight.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/luminous-basic.min.css' %}" type="text/css" media="all">
+    <style>
+        .about-img{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
 
+        .about-img img{
+            width: 25%;
+            border-radius: 50%;
+        }
+        .about-img img:first-child{
+            margin-right: 50px;
+        }
+        .shema-wrapper{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            z-index: 1;
+        }
+        .shema-wrapper:before{
+            position: absolute;
+            content: '';
+            left: 156px;
+            right: 157px;
+            height: 1px;
+            border-bottom: 3px dotted #edac15;
+            top: 48px;
+            z-index: -1;
+        }
+        .shema-item{
+            flex-basis: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
+            justify-content: center;
+        }
+        .shema-item img{
+                width: 90px;
+                border-radius: 50%;
+                border: 3px solid #edac15;
+                box-sizing: content-box;
+            margin-bottom: 15px;
+            background: #fff;
+        }
+        .shema-item-info h4{
+            margin-bottom: 5px;
+        }
+        .shema-item-info p{
+            margin-bottom: 10px;
+            line-height: 20px;
+        }
+        .shema-item-info{
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+
+        }
+    </style>
 </head>
 <body class="home">
 
@@ -46,8 +108,9 @@
 <script src="{% static 'js/featherlight.js' %}"></script>
 <script src="{% static 'js/owl.carousel.min.js' %}"></script>
 <script src="{% static 'js/jquery.mask.min.js' %}"></script>
-
+<script src="{% static 'js/Luminous.min.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
+
  <script>
 
 
@@ -105,5 +168,7 @@ window.onclick = function(event) {
     }
 })
     </script>
+{% block js %}
+{% endblock %}
 </body>
 </html>

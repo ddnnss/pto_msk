@@ -124,27 +124,53 @@
     <section class="shema ">
         <div class="container">
 
-            <div class="block9_title">
-                схема работы
-                <span>6 шагов к вашему новому проекту</span>		</div>
-            <div class="block9_img">
-                <img src="{% static 'images/shem.jpg' %}" alt="">
-                <div class="block9_img_text1">
-                    вы оставляете заявку<br>
-                    по телефону на сайте			</div>
-                <div class="block9_img_text2">
+            <h2 class="widget-title text-center"><span>Порядок работы</span></h2>
 
-                    консультация и замер<br>бесплатно			</div>
-                <div class="block9_img_text3">
-                    составление<br>сметы			</div>
-                <div class="block9_img_text4">
-                    подписание<br>договора			</div>
-                <div class="block9_img_text5">
-                    выполнение<br>работ			</div>
-                <div class="block9_img_text6">
-                    прием работы и оплата
-                    <br>выполненных услуг			</div>
+            <div class="shema-wrapper">
+
+                <div class="shema-item">
+                    <img src="{% static 'images/s1.png' %}" alt="">
+                    <div class="shema-item-info">
+                        <h4>Звонок</h4>
+                        <p>За <strong>5 минут</strong> выясняем детали заказа</p>
+
+                    </div>
+                </div>
+                 <div class="shema-item">
+                    <img src="{% static 'images/s2.png' %}" alt="">
+                    <div class="shema-item-info">
+                        <h4>Расчет</h4>
+                        <p>Готовим информацию по этапам, срокам и стоимости работ в <strong>течении 1 часа</strong></p>
+
+                    </div>
+                </div>
+                 <div class="shema-item">
+                    <img src="{% static 'images/s3.png' %}" alt="">
+                    <div class="shema-item-info">
+                        <h4>Договор</h4>
+                        <p>Составляем договор с подробным указанием объема и сроков работ за <strong>4 часа</strong></p>
+
+                    </div>
+                </div>
+                 <div class="shema-item">
+                    <img src="{% static 'images/s4.png' %}" alt="">
+                    <div class="shema-item-info">
+                        <h4>Авансовый платеж</h4>
+                        <p>Получаем 50% оплаты</p>
+
+                    </div>
+                </div>
+                 <div class="shema-item">
+                    <img src="{% static 'images/s5.png' %}" alt="">
+                    <div class="shema-item-info">
+                        <h4>Работа</h4>
+                        <p>Выполняем качественно и строго по согласованному графику</p>
+
+                    </div>
+                </div>
             </div>
+
+
             <div class="shema-bottom">
                 <a class="btn btn-primary" target="_self" href="{% url 'contacts' %}">Оставить заявку</a>
             </div>
@@ -291,36 +317,36 @@
             const promise = document.querySelector( '.promise' )
             const handler = () => raf( () => {
                 if (temp === 0){
-                      if (checkPromise( promise )){
-                    if(temp === 1){
-                        // Auto-counter from HTML API
-                        var counters = document.getElementsByClassName('counter'),
-                            print = function(val, data) {
-                                data.element.innerHTML = parseInt(val);
+                    if (checkPromise( promise )){
+                        if(temp === 1){
+                            // Auto-counter from HTML API
+                            var counters = document.getElementsByClassName('counter'),
+                                print = function(val, data) {
+                                    data.element.innerHTML = parseInt(val);
+                                }
+
+                            for (var i = 0, l = counters.length; i < l; i++) {
+                                // Loads from HTML dataset
+                                var data = {};
+                                for (var attr in counters[i].dataset) {
+                                    data[attr] = counters[i].dataset[attr];
+                                }
+
+                                // Save element and callbacks
+                                data.element = counters[i];
+                                data.start = print;
+                                data.progress = print;
+                                data.complete = print;
+
+                                // Creates the counter
+                                new Counter(data);
+
+
                             }
-
-                        for (var i = 0, l = counters.length; i < l; i++) {
-                            // Loads from HTML dataset
-                            var data = {};
-                            for (var attr in counters[i].dataset) {
-                                data[attr] = counters[i].dataset[attr];
-                            }
-
-                            // Save element and callbacks
-                            data.element = counters[i];
-                            data.start = print;
-                            data.progress = print;
-                            data.complete = print;
-
-                            // Creates the counter
-                            new Counter(data);
-
 
                         }
 
                     }
-
-                }
                 }
 
 

@@ -6,9 +6,12 @@ from django.template.loader import render_to_string
 from pytils.translit import slugify
 from random import choices
 import string
-
+from django.utils.safestring import mark_safe
+from PIL import Image
 import settings
-
+import pto_msk.settings
+import os
+import uuid
 
 class Banner(models.Model):
     order = models.IntegerField('Номер по порядку', default=1)
@@ -74,7 +77,7 @@ class Project(models.Model):
     customer = models.CharField('Название проекта', max_length=40, blank=True, null=True)
     nameSlug = models.CharField(max_length=255, blank=True, null=True, editable=False)
     name = models.CharField('Заказчик ', max_length=255, blank=False, null=True)
-    image = models.ImageField('Изображение (360 x 240)', upload_to='service_img/', blank=True)
+    image = models.ImageField('Изображение (360 x 240)', upload_to='project_img/', blank=True)
     town = models.CharField('Город', max_length=40, blank=True, null=True)
     description = RichTextUploadingField('Полное описание проекта', blank=True, null=True)
     pageH1 = models.CharField('Тег H1', max_length=255, blank=True, null=True)
@@ -106,6 +109,45 @@ class Project(models.Model):
         verbose_name = "Проект"
         verbose_name_plural = "Проекты"
 
+class ProjectImage(models.Model):
+    project = models.ForeignKey(Project,blank=False,null=True,on_delete=models.CASCADE,verbose_name='Фото для проекта')
+
+    image = models.ImageField('Фото', upload_to='project_img/', blank=False, null=True)
+    image_small = models.CharField(max_length=255, blank=True, default='')
+
+    def __str__(self):
+        return 'Фото для проекта : {}'.format(self.project.name)
+
+    class Meta:
+        verbose_name = "Фото для проекта"
+        verbose_name_plural = "Фото для проекта"
+
+    def image_tag(self):
+        # used in the admin site model as a "thumbnail"
+        if self.image_small:
+            return mark_safe('<img src="{}" width="150" height="150" style="object-fit:cover" />'.format(self.image_small))
+        else:
+            return mark_safe('<span>НЕТ МИНИАТЮРЫ</span>')
+
+    image_tag.short_description = 'Картинка'
+
+    def save(self, *args, **kwargs):
+        fill_color = '#fff'
+        image = Image.open(self.image)
+
+        if image.mode in ('RGBA', 'LA'):
+            background = Image.new(image.mode[:-1], image.size, fill_color)
+            background.paste(image, image.split()[-1])
+            image = background
+
+        image.thumbnail((250, 250), Image.ANTIALIAS)
+        small_name = 'media/project_img/{}/{}'.format(self.project.id, str(uuid.uuid4()) + '.jpg')
+        os.makedirs('{}/media/project_img/{}'.format(pto_msk.settings.BASE_DIR,self.project.id), exist_ok=True)
+        image.save(small_name, 'JPEG', quality=90)
+
+        self.image_small = '/' + small_name
+
+        super(ProjectImage, self).save(*args, **kwargs)
 
 class Callback(models.Model):
     name = models.CharField('Имя',max_length=255, blank=True, default='Нет данных')
