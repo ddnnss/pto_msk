@@ -101,6 +101,35 @@
                         {{ curService.description | safe }}
                     </div><!-- /.col -->
                 </div><!-- /.row -->
+             <h4 style="font-size: 20px" class="widget-title margin-bottom-30 text-center">
+                            Скидка 20% на второй и последующий заказы.<br>
+                            Узнайте, как стать постоянным клиентом.
+
+                        </h4>
+             <form data-toggle="validator" method="post" action="{% url 'callback' %}" class="contact-form aSubmit" enctype="multipart/form-data">{% csrf_token %}
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-4">
+									<span class="contact-form-control-wrap email">
+										<input style="margin-bottom: 0" name="{{ form.name.name }}" value="" size="40" class="contact-form-control contact-text contact-email contact-validates-as-required contact-validates-as-email form-control" aria-required="true"  aria-invalid="false" placeholder="Ваше имя" type="text" >
+									</span>
+                            </div>
+                             <div class="col-xs-12 col-md-4">
+									<span class="contact-form-control-wrap email">
+										<input style="margin-bottom: 0" name="{{ form.phone.name }}" value="" size="40" class="phone-field contact-form-control contact-text contact-email contact-validates-as-required contact-validates-as-email form-control" aria-required="true" required aria-invalid="false" placeholder="Телефон" type="text" >
+									</span>
+                            </div>
+                            <input style="display: none" type="text" name="age" value="">
+                            <input style="display: none" type="checkbox" name="agree">
+                            <textarea style="display: none"  name="messages" ></textarea>
+                            <input type="hidden" id="service_name" name="{{ form.service.name }}" value="">
+                            <input type="hidden"  name="form_type" value="modal">
+                            <div class="col-xs-12 col-md-4">
+                                <button id="modal_btn" style="width: 100%" class="contact-form-control  btn btn-primary" onclick="sendS()" type="submit">Узнать</button>
+                            </div>
+                        </div>
+
+                    </form>
 
 
 
