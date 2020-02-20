@@ -1687,7 +1687,7 @@
 					}), new RegExp("^#" + e.hashPrefix).test(i) && t(this).find('a[href="' + i.replace(e.hashPrefix, "") + '"]').trigger("click")
 				}),
 				function () {
-					var n = t(".js-jumbotron-slider");
+					var n = t(".js-newslider-slider");
 					n.length && t(document).on("scroll", e.throttle(function () {
 						i(n) ? n.carousel("cycle") : n.carousel("pause")
 					}, 1e3, {

@@ -17,7 +17,7 @@
 		05.08. Boxed Container
 		05.09. Top Navigation
 		05.10. Main Navigation
-		05.11. Jumbotron
+		05.11. newslider
 		05.12. Buttons
 		05.14. Single portfolio
 		05.15. Portfolio Grid
@@ -1418,9 +1418,9 @@ body.boxed > .boxed-container { margin: 0 auto; box-shadow: 0 0 1.875rem rgba(0,
 @media (min-width: 768px) { body.boxed > .boxed-container { width: 780px; } }
 @media (min-width: 992px) { body.boxed > .boxed-container { width: 1000px; } }
 @media (min-width: 1200px) { body.boxed > .boxed-container { width: 1200px; } }
-@media (min-width: 1200px) { body.boxed .jumbotron-content { top: 10%; } }
-@media (min-width: 1700px) { body.boxed .jumbotron-content { top: 10%; } }
-body.boxed .jumbotron__extras { position: relative; background-color: #333333; }
+@media (min-width: 1200px) { body.boxed .newslider-content { top: 10%; } }
+@media (min-width: 1700px) { body.boxed .newslider-content { top: 10%; } }
+body.boxed .newslider__extras { position: relative; background-color: #333333; }
 body.boxed .footer-bottom::before, body.boxed .footer-bottom::after, body.boxed .footer-bottom__left::before, body.boxed .footer-bottom__right::after { display: none; }
 
 /* 05.09. Top Navigation */
@@ -1484,39 +1484,39 @@ body.boxed .footer-bottom::before, body.boxed .footer-bottom::after, body.boxed 
 .home-icon .fa { vertical-align: middle; }
 @media (min-width: 992px) { .home-icon .fa { padding-top: 3px; } }
 
-/* 05.11. Jumbotron */
-.jumbotron { position: relative; background-color: #f2f2f2; margin-bottom: 3.75rem; }
-@media (min-width: 992px) { .jumbotron { background-color: transparent; } }
-@media (min-width: 992px) { .jumbotron-content { position: absolute; width: 32.5rem; top: 6%; } }
-@media (min-width: 1200px) { .jumbotron-content { top: 3%; } }
-@media (min-width: 1350px) { .jumbotron-content { top: 6%; } }
-@media (min-width: 1500px) { .jumbotron-content { top: 10%; } }
-@media (min-width: 1700px) { .jumbotron-content { top: 19.5%; } }
-.jumbotron-content__title { font-size: 36px; margin-top: 29px; margin-bottom: 12px; }
-@media (min-width: 992px) { .jumbotron-content__title { color: #ffffff; font-size: 2.5rem; } }
-.jumbotron-content__description { font-size: 1.06667rem; }
-@media (min-width: 992px) { .jumbotron-content__description { color: #eeeeee; } }
-.jumbotron-content__description .btn { margin: 9px 8px 18px 0; }
-@media (min-width: 992px) { .jumbotron__extras { position: relative; background-color: #333333; } }
-@media (min-width: 1200px) { .jumbotron__extras { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, #000000); } }
-@media (min-width: 992px) { .jumbotron__extras::before { position: absolute; content: ''; background-color: rgba(250, 250, 250, 0.15); left: 0; right: 0; top: -1px; height: 1px; } }
-.jumbotron__control { position: absolute; width: 60px; height: 60px; line-height: 60px; text-align: center; background: linear-gradient(#666666, #5a5a5a); color: #222222; top: 20px; border-radius: 2px; font-size: 20px; }
-@media (min-width: 544px) { .jumbotron__control { top: 60px; } }
-@media (min-width: 768px) { .jumbotron__control { top: 120px; } }
-@media (min-width: 992px) { .jumbotron__control { display: inline-block; position: inherit; top: inherit; margin: 25px 0; } }
-.jumbotron__control:focus, .jumbotron__control:hover { background: #bbbbbb; color: #222222; }
-.jumbotron__control.left { padding-right: 2px; left: 10px; }
-@media (min-width: 992px) { .jumbotron__control.left { margin-right: 7px; } }
-.jumbotron__control.right { padding-left: 2px; right: 10px; }
-.jumbotron__widgets { clear: both; display: none; padding-top: 20px; }
-@media (min-width: 992px) { .jumbotron__widgets { padding-top: 0; } }
-.jumbotron__widgets .widget { border-bottom: 1px solid rgba(0, 0, 0, 0.15); margin-bottom: 20px; padding-bottom: 20px; }
-@media (min-width: 992px) { .jumbotron__widgets .widget { display: inline-block; vertical-align: top; margin-right: 20px; margin-bottom: 0; padding: 33.5px 20px 33.5px 0; border-right: 1px solid rgba(250, 250, 250, 0.15); } }
-@media (min-width: 1200px) { .jumbotron__widgets .widget { margin-right: 30px; padding: 33.5px 30px 33.5px 0; } }
-.jumbotron__widgets .widget:last-of-type { margin-right: 0; margin-bottom: 0; padding-right: 0; border-right: 0; border-bottom: 0; }
-@media (min-width: 992px) { .jumbotron__widgets .widget:last-of-type { padding-bottom: 0; } }
-.home .jumbotron__widgets { display: block; }
-@media (max-width: 991px) { .jumbotron__widgets + .header__featured-link { padding-top: 0; } }
+/* 05.11. newslider */
+.newslider { position: relative; background-color: #f2f2f2; margin-bottom: 3.75rem; }
+@media (min-width: 992px) { .newslider { background-color: transparent; } }
+@media (min-width: 992px) { .newslider-content { position: absolute; width: 32.5rem; top: 6%; } }
+@media (min-width: 1200px) { .newslider-content { top: 3%; } }
+@media (min-width: 1350px) { .newslider-content { top: 6%; } }
+@media (min-width: 1500px) { .newslider-content { top: 10%; } }
+@media (min-width: 1700px) { .newslider-content { top: 19.5%; } }
+.newslider-content__title { font-size: 36px; margin-top: 29px; margin-bottom: 12px; }
+@media (min-width: 992px) { .newslider-content__title { color: #ffffff; font-size: 2.5rem; } }
+.newslider-content__description { font-size: 1.06667rem; }
+@media (min-width: 992px) { .newslider-content__description { color: #eeeeee; } }
+.newslider-content__description .btn { margin: 9px 8px 18px 0; }
+@media (min-width: 992px) { .newslider__extras { position: relative; background-color: #333333; } }
+@media (min-width: 1200px) { .newslider__extras { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, #000000); } }
+@media (min-width: 992px) { .newslider__extras::before { position: absolute; content: ''; background-color: rgba(250, 250, 250, 0.15); left: 0; right: 0; top: -1px; height: 1px; } }
+.newslider__control { position: absolute; width: 60px; height: 60px; line-height: 60px; text-align: center; background: linear-gradient(#666666, #5a5a5a); color: #222222; top: 20px; border-radius: 2px; font-size: 20px; }
+@media (min-width: 544px) { .newslider__control { top: 60px; } }
+@media (min-width: 768px) { .newslider__control { top: 120px; } }
+@media (min-width: 992px) { .newslider__control { display: inline-block; position: inherit; top: inherit; margin: 25px 0; } }
+.newslider__control:focus, .newslider__control:hover { background: #bbbbbb; color: #222222; }
+.newslider__control.left { padding-right: 2px; left: 10px; }
+@media (min-width: 992px) { .newslider__control.left { margin-right: 7px; } }
+.newslider__control.right { padding-left: 2px; right: 10px; }
+.newslider__widgets { clear: both; display: none; padding-top: 20px; }
+@media (min-width: 992px) { .newslider__widgets { padding-top: 0; } }
+.newslider__widgets .widget { border-bottom: 1px solid rgba(0, 0, 0, 0.15); margin-bottom: 20px; padding-bottom: 20px; }
+@media (min-width: 992px) { .newslider__widgets .widget { display: inline-block; vertical-align: top; margin-right: 20px; margin-bottom: 0; padding: 33.5px 20px 33.5px 0; border-right: 1px solid rgba(250, 250, 250, 0.15); } }
+@media (min-width: 1200px) { .newslider__widgets .widget { margin-right: 30px; padding: 33.5px 30px 33.5px 0; } }
+.newslider__widgets .widget:last-of-type { margin-right: 0; margin-bottom: 0; padding-right: 0; border-right: 0; border-bottom: 0; }
+@media (min-width: 992px) { .newslider__widgets .widget:last-of-type { padding-bottom: 0; } }
+.home .newslider__widgets { display: block; }
+@media (max-width: 991px) { .newslider__widgets + .header__featured-link { padding-top: 0; } }
 
 /* 05.12. Buttons */
 .btn { font-family: "Roboto", Helvetica, Arial, sans-serif; font-size: .875rem; border-radius: 0.125rem; transition: all 200ms ease-out; border-width: 2px; }
@@ -1730,15 +1730,15 @@ form .response.error { color: red; }
 .icon-box__title { padding-top: 8px; font-size: 25px; margin-bottom: 15px; }
 .icon-box__subtitle { font-size: 14px; color: #999999; }
 
-.header .icon-box__text, .jumbotron .icon-box__text { margin-left: 50px; }
-.header .icon-box__title, .jumbotron .icon-box__title { margin: 0; padding: 0; font-size: 13px; font-family: "Open Sans", Helvetica, Arial, sans-serif; font-weight: normal; color: #999999; line-height: inherit; }
-.header .icon-box__subtitle, .jumbotron .icon-box__subtitle { display: block; margin-top: -2px; font-size: 15px; font-family: "Roboto", Helvetica, Arial, sans-serif; font-weight: bold; color: #666666; }
-@media (min-width: 992px) { .header .icon-box__subtitle, .jumbotron .icon-box__subtitle { color: #bbbbbb; } }
+.header .icon-box__text, .newslider .icon-box__text { margin-left: 50px; }
+.header .icon-box__title, .newslider .icon-box__title { margin: 0; padding: 0; font-size: 13px; font-family: "Open Sans", Helvetica, Arial, sans-serif; font-weight: normal; color: #999999; line-height: inherit; }
+.header .icon-box__subtitle, .newslider .icon-box__subtitle { display: block; margin-top: -2px; font-size: 15px; font-family: "Roboto", Helvetica, Arial, sans-serif; font-weight: bold; color: #666666; }
+@media (min-width: 992px) { .header .icon-box__subtitle, .newslider .icon-box__subtitle { color: #bbbbbb; } }
 
 /* 05.25. Social Icons */
 .social-icons__link { color: #656565; }
-.jumbotron__widgets .social-icons__link { display: inline-block; font-size: 30px; margin-top: -3px; }
-@media (min-width: 1200px) { .jumbotron__widgets .social-icons__link { margin-right: 7px; } }
+.newslider__widgets .social-icons__link { display: inline-block; font-size: 30px; margin-top: -3px; }
+@media (min-width: 1200px) { .newslider__widgets .social-icons__link { margin-right: 7px; } }
 .social-icons__link:hover { color: #bbbbbb; }
 .social-icons__link:last-of-type { margin-right: 0; }
 
@@ -2038,29 +2038,29 @@ section.map {
 .video-container .filter { z-index: 1; position: absolute; background: none; width: 100%; }
 .video-container video { position: absolute; z-index: 0; bottom: 0; }
 .video-container video.fillWidth { width: 100%; }
-.homepage-hero-module .jumbotron-content { width: 80%; top: 190px; margin: 0px auto; position: relative; }
-.boxed .homepage-hero-module .jumbotron-content { top: 150px; }
-.homepage-hero-module .jumbotron-content__title { color: #fff !important;}
-.homepage-hero-module .jumbotron-content__description p { color: #eee !important; font-size: 20px; }
+.homepage-hero-module .newslider-content { width: 80%; top: 190px; margin: 0px auto; position: relative; }
+.boxed .homepage-hero-module .newslider-content { top: 150px; }
+.homepage-hero-module .newslider-content__title { color: #fff !important;}
+.homepage-hero-module .newslider-content__description p { color: #eee !important; font-size: 20px; }
 .homepage-hero-module .hidden { display: none !important }
 
 @media all and (max-width: 1499px) {
 .homepage-hero-module { height: 468px; margin-bottom: 45px; }
-.homepage-hero-module .jumbotron-content { top: 100px; }
+.homepage-hero-module .newslider-content { top: 100px; }
 }
 
 @media all and (max-width: 990px) {
-.homepage-hero-module .jumbotron-content { width: 100%; top: 90px; }
+.homepage-hero-module .newslider-content { width: 100%; top: 90px; }
 }
 
 @media all and (max-width: 750px) {
-.homepage-hero-module .jumbotron-content__title { font-size: 29px; }
-.homepage-hero-module .jumbotron-content__description p { font-size: 16px }
+.homepage-hero-module .newslider-content__title { font-size: 29px; }
+.homepage-hero-module .newslider-content__description p { font-size: 16px }
 }
 
 @media all and (max-width: 380px) {
-.homepage-hero-module .jumbotron-content { text-align: center; top: 50px; }
-.homepage-hero-module .jumbotron-content .btn { display: block; margin-bottom: 5px; }
+.homepage-hero-module .newslider-content { text-align: center; top: 50px; }
+.homepage-hero-module .newslider-content .btn { display: block; margin-bottom: 5px; }
 }
 
 /* 05.41. Boxed backgrounds */
@@ -3407,7 +3407,8 @@ body.bg4 { background-image: url(../images/4.png) }
         }
 
         .about-img img{
-            width: 25%;
+            width: 300px;
+          height: 300px;
             border-radius: 50%;
         }
         .about-img img:first-child{

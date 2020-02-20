@@ -10,18 +10,18 @@
     {{ block.super }}
 {% endblock %}
 {% block content %}
-    <div class="jumbotron">
+    <div class="newslider">
 
-        <div class="carousel slide js-jumbotron-slider" id="headerCarousel" data-ride="carousel" data-interval="5000">
+        <div class="carousel slide js-newslider-slider" id="headerCarousel" data-ride="carousel" data-interval="5000">
 
             <div class="carousel-inner">
                 {% for banner in allBanners %}
                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %} ">
                         <img src="{{ banner.image.url }}" srcset="{{ banner.image.url }} 1920w, {{ banner.image.url }} 425w" sizes="100vw" alt="{{ banner.bigText }}">
                         <div class="container">
-                            <div class="jumbotron-content">
-                                <h3 class="jumbotron-content__title">{{ banner.bigText }}</h3>
-                                <div class="jumbotron-content__description">
+                            <div class="newslider-content">
+                                <h3 class="newslider-content__title">{{ banner.bigText }}</h3>
+                                <div class="newslider-content__description">
                                     <p>
                                         {{ banner.smallText }}
                                     </p>
@@ -29,21 +29,21 @@
                                         <a class="btn btn-primary" href="{{ banner.buttonUrl }}" target="_self">{{ banner.buttonText }}</a>
                                         <a class="btn btn-tertiary" href="{{ banner.button1Url }}" target="_self">{{ banner.button1Text }}</a>
                                     </p>
-                                </div><!-- /.jumbotron-content__description -->
-                            </div><!-- /.jumbotron-content -->
+                                </div><!-- /.newslider-content__description -->
+                            </div><!-- /.newslider-content -->
                         </div><!-- /.container -->
                     </div><!-- /.carousel-item -->
                 {% endfor %}
             </div><!-- /.carousel-inner -->
-            <div class="jumbotron__extras">
+            <div class="newslider__extras">
                 <div class="container">
-                    <a class="left jumbotron__control" href="#headerCarousel" role="button" data-slide="prev">
+                    <a class="left newslider__control" href="#headerCarousel" role="button" data-slide="prev">
                         <i class="fa fa-caret-left"></i>
                     </a>
-                    <a class="right jumbotron__control" href="#headerCarousel" role="button" data-slide="next">
+                    <a class="right newslider__control" href="#headerCarousel" role="button" data-slide="next">
                         <i class="fa fa-caret-right"></i>
                     </a>
-                    <div class="jumbotron__widgets hidden-md-down pull-right">
+                    <div class="newslider__widgets hidden-md-down pull-right">
                         <div class="widget">
                             <div class="icon-box">
                                 <i class="fa fa-phone"></i>
@@ -67,15 +67,16 @@
                                 <i class="fa fa-envelope-o"></i>
                                 <div class="icon-box__text">
                                     <h4 class="icon-box__title">E-mail:</h4>
-                                    <span class="icon-box__subtitle">isp@pto-msk.com</span>
+                                    <span class="icon-box__subtitle"><a style="color: #bbbbbb" href="mailto:isp@pto-msk.com">isp@pto-msk.com</a></span>
                                 </div>
                             </div><!-- /.icon-box -->
                         </div>
-                    </div><!-- /.jumbotron__widgets -->
+                    </div><!-- /.newslider__widgets -->
                 </div><!-- /.container -->
-            </div><!-- /.jumbotron__extras -->
+            </div><!-- /.newslider__extras -->
         </div><!-- /.carousel -->
-    </div><!-- /.jumbotron -->
+    </div><!-- /.newslider -->
+
     <section class="services">
 
       <h2 class="widget-title text-center"><span>Окончательный расчет после принятия документов заказчиком.<br> Ваша гарантия соблюдения качества и сроков! </span></h2>
