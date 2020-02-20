@@ -8,7 +8,7 @@ from random import choices
 import string
 from django.utils.safestring import mark_safe
 from PIL import Image
-#import settings
+import settings
 import pto_msk.settings
 import os
 import uuid
