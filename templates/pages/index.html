@@ -83,7 +83,7 @@
         <div class="container">
         {% if messages %}
                     {% for message in messages %}
-                        {% if message.tags %}  <div style="margin-bottom: 30px;border: 2px dashed green;color: green;text-align: center;padding: 15px 0;">{% endif %} <strong> {{ message }}</strong>    </div>
+                        {% if message.tags %}  <div style="margin-bottom: 30px;border: 2px dashed green;color: green;text-align: center;padding: 15px 0;">{% endif %} <span class="success_msg_cl" id="success_msg_id"><strong> {{ message }}</strong> </span>       </div>
                     {% endfor %}
                 {% endif %}
             <div class="row">
