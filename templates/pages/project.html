@@ -40,10 +40,11 @@
         </div><!-- /.container -->
     </div><!-- /.breadcrumbs -->
 
-    <div class="container margin-bottom-30">
+    <div class="margin-bottom-30">
         <div class="row">
-            <main id="main" class="site-main  col-xs-12  col-lg-12 " role="main">
-                <div class="row margin-bottom-30">
+        <div class="container">
+                <main id="main" class="site-main  col-xs-12  col-lg-12 " role="main">
+                <div class=" margin-bottom-30">
                     {{ curProject.description | safe }}
                 </div><!-- /.row -->
                 {% if allImg %}
@@ -61,8 +62,10 @@
                     </ul>
                 {% endif %}
             </main>
+        </div><!-- /.container -->
+
         </div><!-- /.row -->
-    </div><!-- /.container -->
+    </div>
 
 {% endblock %}
 

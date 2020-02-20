@@ -3406,14 +3406,35 @@ body.bg4 { background-image: url(../images/4.png) }
             margin-bottom: 50px;
         }
 
-        .about-img img{
-            width: 300px;
-          height: 300px;
+    .about-img-item{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              margin-bottom: 20px;
+          }
+
+        .about-img-item img{
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
+            margin-bottom: 10px;
         }
-        .about-img img:first-child{
+        .about-img-item p{font-size:18px;color: #111; margin-bottom: 0;font-weight: 600}
+        .about-img-item span{color: #111;}
+        .mr-50{
             margin-right: 50px;
         }
+         @media (max-width: 760px){
+             .mr-50{
+            margin-right: 0px !important;
+        }
+             .about-img{
+                 margin-bottom: 20px !important;
+             }
+         }
+
+
+
         .shema-wrapper{
             position: relative;
             display: flex;
