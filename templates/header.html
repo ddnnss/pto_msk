@@ -18,7 +18,7 @@
 			</div><!-- /.top -->
 
 			<div class="header">
-				<div class="container">
+				<div style="position: relative" class="container">
 
 					<div class="header__logo">
 						<a href="{% url 'index' %}">
@@ -56,11 +56,12 @@
 
 								</ul>
 							</li>
-{#                        <li class="{{ projectsActive }}">#}
-{#								<a href="{% url 'projects' %}">Блог</a>#}
-{#							</li>#}
+
 							<li class="{{ projectsActive }}">
 								<a href="{% url 'projects' %}">Проекты</a>
+							</li>
+                        <li class="{{ blogActive }}">
+								<a href="{% url 'posts' %}">Блог</a>
 							</li>
 
 							<li class="{{ contactsActive }}">

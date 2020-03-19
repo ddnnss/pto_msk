@@ -133,6 +133,21 @@
                 <h2 class="page-header__title  display-1 margin-bottom-30 text-center">Наши проекты на карте</h2>
     <div class="margin-bottom-60" style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Яндекс.Карты</a><a href="https://yandex.ru/maps/?ll=37.912610,56.041201&mode=userm.." style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс.Карты — поиск мест и адресов, городской транспорт</a><iframe src="https://yandex.ru/map-widget/v1/-/CKqSMUPc" width="100%" height="400" frameborder="0" allowfullscreen="true" style="position:relative;"></iframe></div>
 
+                        {% if allImg %}
+                        <h2 class="page-header__title  display-1 margin-bottom-30 text-center">Отзывы о нашей работе</h2>
+                    <ul style=" text-align: center;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));list-style: none" class="gallery-wrapper">
+                        {% for img in allImg %}
+                            <li>
+                                <a class="gallery-demo" href="{{ img.image.url}}">
+                                    <img src="/{{ img.image_small }}" alt="{{ curProject.name }}">
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
 
 
             </main>

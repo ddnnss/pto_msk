@@ -1,0 +1,65 @@
+{% extends  'basic.html' %}
+{% load static %}
+
+{% block title %}
+    {{ block.super }}
+{% endblock %}
+
+{% block keywords %}
+    {{ block.super }}
+{% endblock %}
+
+{% block description %}
+    {{ block.super }}
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+{% endblock %}
+
+
+
+{% block content %}
+     <div class="page-header">
+        <div class="container">
+            <h1 class="page-header__title  display-1">Блог</h1>
+        </div>
+    </div><!-- /.page-header -->
+    <div class="breadcrumbs">
+        <div class="container" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="{% url 'index' %}" class="home">Главная</a>
+				</span>
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<span itemprop="name">Блог</span>
+				</span>
+        </div><!-- /.container -->
+    </div><!-- /.breadcrumbs -->
+  <section class="services">
+
+     <div class="container">
+
+            <div class="row">
+                {% for post in allPosts %}
+                    <div style="margin-bottom: 20px" class="col-lg-4 page-box--block m-b">
+                        <a class="page-box__picture" href="{% url 'post' post.nameSlug %}">
+                            <img src="{{ post.image.url }}" width="360" height="240" srcset="{{ post.image.url }} 360w, {{ post.image.url }} 840w" sizes="(min-width: 992px) 360px, calc(100vw - 30px)" alt="{{ post.name }}">
+                        </a>
+                        <div style="border-bottom: 1px solid; margin-bottom: 10px;" class="page-box__content">
+                            <h4 class="page-box__title"><a href="{% url 'post' post.nameSlug %}">{{ post.name }}</a></h4>
+                            <p class="page-box__text">
+                                {{ post.short_description }}
+                            </p>
+
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center"><a href="{% url 'post' post.nameSlug %}"  class="btn btn-sm btn-primary">Подробнее</a></div>
+                    </div><!-- /.col -->
+                {% endfor %}
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.services -->
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+{% endblock %}

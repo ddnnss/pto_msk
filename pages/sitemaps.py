@@ -8,7 +8,7 @@ class StaticViewSitemap(Sitemap):
     priority = 0.5
 
     def items(self):
-        return ['index','services','projects','about','contacts']
+        return ['index','services','projects','about','contacts','posts']
 
     def location(self, item):
         return reverse(item)
@@ -22,4 +22,9 @@ class ServicesSitemap(Sitemap):
 
 
 
+class BlogSitemap(Sitemap):
+    changefreq = "monthly"
+    priority = 0.5
+    def items(self):
+        return BlogPost.objects.all()
 

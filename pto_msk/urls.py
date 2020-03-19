@@ -12,6 +12,7 @@ admin.site.index_title = "PTO-MSK администрирование"
 sitemaps = {
     'static': StaticViewSitemap,
     'services': ServicesSitemap,
+    'posts': BlogSitemap,
 }
 
 urlpatterns = [

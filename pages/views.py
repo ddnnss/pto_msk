@@ -130,11 +130,29 @@ def service(request, slug):
     pageTitle = curService.pageTitle
     pageDescription = curService.pageDescription
     pageKeywords = curService.pageKeywords
+    allImg = curService.review_img.all()
     return render(request, 'pages/service.html', locals())
 
 
+def posts(request):
+    blogActive = 'current-menu-item'
+    allPosts = BlogPost.objects.filter(isActive=True)
+    try:
+        seotag = SeoTag.objects.first()
+        pageTitle = seotag.blogTitle
+        pageDescription = seotag.blogDescription
+        pageKeywords = seotag.blogKeywords
+    except:
+        pageTitle = 'НЕ ЗАПОЛНЕНА ТАБЛИЦА СЕО ТЕГИ'
+        pageDescription = 'НЕ ЗАПОЛНЕНА ТАБЛИЦА СЕО ТЕГИ'
+        pageKeywords = 'НЕ ЗАПОЛНЕНА ТАБЛИЦА СЕО ТЕГИ'
+    return render(request, 'pages/posts.html', locals())
+
+def post(request,slug):
+    post = get_object_or_404(BlogPost,nameSlug = slug)
+    return render(request, 'pages/post.html', locals())
+
 def robots(request):
     robotsTxt = f"User-agent: *\nDisallow: /admin/\nHost: https://www.pto-msk.ru\nSitemap: https://www.pto-msk.ru/sitemap.xml"
-
     return HttpResponse(robotsTxt, content_type="text/plain")
 

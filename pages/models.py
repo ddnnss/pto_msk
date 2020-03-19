@@ -13,6 +13,43 @@ import pto_msk.settings
 import os
 import uuid
 
+
+class BlogPost(models.Model):
+    name = models.CharField('Название статьи', max_length=255, blank=False, null=True)
+    short_description = models.CharField('Краткое описание (255 символов)',max_length=255, blank=False)
+    description = RichTextUploadingField('Статья', blank=False, null=True)
+    nameSlug = models.CharField(max_length=255, blank=True, null=True, editable=False)
+    image = models.ImageField('Изображение превью (360 x 240)', upload_to='post_img/', blank=False)
+    pageH1 = models.CharField('Тег H1', max_length=255, blank=True, null=True)
+    pageTitle = models.CharField('Название страницы SEO', max_length=255, blank=True, null=True)
+    pageDescription = models.CharField('Описание страницы SEO', max_length=255, blank=True, null=True)
+    pageKeywords = models.TextField('Keywords SEO', blank=True, null=True)
+    views = models.IntegerField('Просмотров', default=0)
+    isActive = models.BooleanField('Отображается?', default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        slug = slugify(self.name)
+        if not self.nameSlug:
+            slugRandom = ''
+            testSlug = BlogPost.objects.filter(nameSlug=slug)
+            if testSlug:
+                slugRandom = '-' + ''.join(choices(string.ascii_lowercase + string.digits, k=2))
+                self.nameSlug = slug + slugRandom
+            else:
+                self.nameSlug = slug
+        super(BlogPost, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return f'/blog/{self.nameSlug}/'
+
+    def __str__(self):
+        return 'Статья : %s ' % self.name
+
+    class Meta:
+        verbose_name = "Статья"
+        verbose_name_plural = "Статьи"
+
 class Banner(models.Model):
     order = models.IntegerField('Номер по порядку', default=1)
     bigText = models.CharField('Заголовок на баннере (70 символов)', max_length=70, blank=False, null=True)
@@ -71,6 +108,46 @@ class Service(models.Model):
     class Meta:
         verbose_name = "Услуга"
         verbose_name_plural = "Услуги"
+
+class Review(models.Model):
+    service = models.ManyToManyField(Service, blank=False, null=True, verbose_name="Отзыв для услуг",
+                                     related_name='review_img')
+    image = models.ImageField('Отзыв', upload_to='review_img/', blank=False)
+    image_small = models.CharField(max_length=255, blank=True, null=True)
+
+    def image_tag(self):
+        if self.image_small:
+            return mark_safe('<img src="/{}" width="150" height="150" style="object-fit:cover" />'.format(self.image_small))
+        else:
+            return mark_safe('<span>НЕТ МИНИАТЮРЫ</span>')
+
+    image_tag.short_description = 'Картинка'
+
+    def save(self, *args, **kwargs):
+        if not self.image_small:
+            fill_color = '#fff'
+            image = Image.open(self.image)
+
+            if image.mode in ('RGBA', 'LA'):
+                background = Image.new(image.mode[:-1], image.size, fill_color)
+                background.paste(image, image.split()[-1])
+                image = background
+
+            image.thumbnail((250, 250), Image.ANTIALIAS)
+            small_name = 'media/review_img/{}'.format(str(uuid.uuid4()) + '.jpg')
+            os.makedirs('{}/media/review_img/'.format(pto_msk.settings.BASE_DIR), exist_ok=True)
+            image.save(small_name, 'JPEG', quality=90)
+
+            self.image_small =  small_name
+
+            super(Review, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return 'Отзыв  : %s ' % self.id
+
+    class Meta:
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"
 
 
 class Project(models.Model):
@@ -191,6 +268,11 @@ class SeoTag(models.Model):
     aboutDescription = models.CharField('Тег Description для страницы о компании', max_length=255, blank=True,
                                         null=True)
     aboutKeywords = models.TextField('Тег Keywords для страницы о компании', blank=True, null=True)
+
+    blogTitle = models.CharField('Тег Title для страницы блог', max_length=255, blank=True, null=True)
+    blogDescription = models.CharField('Тег Description для страницы блог', max_length=255, blank=True,
+                                        null=True)
+    blogKeywords = models.TextField('Тег Keywords для страницы блог', blank=True, null=True)
 
     yandexMetrika = models.TextField('Код Яндекс метрики', blank=True, null=True)
     fbPixel = models.TextField('Код пикселя', blank=True, null=True)

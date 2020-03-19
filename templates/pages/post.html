@@ -1,0 +1,51 @@
+{% extends  'basic.html' %}
+{% load static %}
+
+{% block title %}
+    {{ block.super }}
+{% endblock %}
+
+{% block keywords %}
+    {{ block.super }}
+{% endblock %}
+
+{% block description %}
+    {{ block.super }}
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+{% endblock %}
+
+
+
+{% block content %}
+       <div class="page-header">
+        <div class="container">
+            <h1 class="page-header__title  display-1">{{ post.name }}</h1>
+        </div>
+    </div><!-- /.page-header -->
+    <div class="breadcrumbs">
+        <div class="container" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="{% url 'index' %}" class="home">Главная</a>
+				</span>
+            	<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="{% url 'posts' %}" class="home">Блог</a>
+				</span>
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<span itemprop="name">{{ post.name }}</span>
+				</span>
+        </div><!-- /.container -->
+    </div><!-- /.breadcrumbs -->
+    <section class="services">
+
+     <div class="container">
+        {{ post.description |safe }}
+     </div>
+    </section>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+{% endblock %}
