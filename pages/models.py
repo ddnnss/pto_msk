@@ -117,30 +117,29 @@ class Review(models.Model):
 
     def image_tag(self):
         if self.image_small:
-            return mark_safe('<img src="/{}" width="150" height="150" style="object-fit:cover" />'.format(self.image_small))
+            return mark_safe('<img src="{}" width="150" height="150" style="object-fit:cover" />'.format(self.image_small))
         else:
             return mark_safe('<span>НЕТ МИНИАТЮРЫ</span>')
 
     image_tag.short_description = 'Картинка'
 
     def save(self, *args, **kwargs):
-        if not self.image_small:
-            fill_color = '#fff'
-            image = Image.open(self.image)
+        fill_color = '#fff'
+        image = Image.open(self.image)
 
-            if image.mode in ('RGBA', 'LA'):
-                background = Image.new(image.mode[:-1], image.size, fill_color)
-                background.paste(image, image.split()[-1])
-                image = background
+        if image.mode in ('RGBA', 'LA'):
+            background = Image.new(image.mode[:-1], image.size, fill_color)
+            background.paste(image, image.split()[-1])
+            image = background
 
-            image.thumbnail((250, 250), Image.ANTIALIAS)
-            small_name = 'media/review_img/{}'.format(str(uuid.uuid4()) + '.jpg')
-            os.makedirs('{}/media/review_img/'.format(pto_msk.settings.BASE_DIR), exist_ok=True)
-            image.save(small_name, 'JPEG', quality=90)
+        image.thumbnail((250, 250), Image.ANTIALIAS)
+        small_name = '/media/review_img/{}'.format(str(uuid.uuid4()) + '.jpg')
+        os.makedirs('{}/media/review_img/'.format(pto_msk.settings.BASE_DIR), exist_ok=True)
+        image.save(pto_msk.settings.BASE_DIR+small_name, 'JPEG', quality=90)
 
-            self.image_small =  small_name
+        self.image_small =  small_name
 
-            super(Review, self).save(*args, **kwargs)
+        super(Review, self).save(*args, **kwargs)
 
     def __str__(self):
         return 'Отзыв  : %s ' % self.id

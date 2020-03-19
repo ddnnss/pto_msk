@@ -142,7 +142,7 @@
                         {% for img in allImg %}
                             <li>
                                 <a class="gallery-demo" href="{{ img.image.url}}">
-                                    <img src="/{{ img.image_small }}" alt="{{ curProject.name }}">
+                                    <img src="{{ img.image_small }}" alt="{{ curProject.name }}">
                                 </a>
                             </li>
                         {% endfor %}
@@ -174,4 +174,7 @@
 
 {% block js %}
     {{ block.super }}
+     <script>
+        new LuminousGallery(document.querySelectorAll(".gallery-demo"));
+    </script>
 {% endblock %}
