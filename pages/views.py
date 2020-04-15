@@ -150,6 +150,11 @@ def posts(request):
 
 def post(request,slug):
     post = get_object_or_404(BlogPost,nameSlug = slug)
+    pageTitle = post.pageTitle
+    pageDescription = post.pageDescription
+    pageKeywords = post.pageKeywords
+    post.views +=1
+    post.save()
     return render(request, 'pages/post.html', locals())
 
 def robots(request):

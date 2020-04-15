@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block title %}
-    {{ block.super }}
+    {{ pageTitle }}
 {% endblock %}
 
 {% block keywords %}
-    {{ block.super }}
+    {{ pageKeywords }}
 {% endblock %}
 
 {% block description %}
-    {{ block.super }}
+    {{ pageDescription }}
 {% endblock %}
 
 {% block css %}
@@ -47,6 +47,7 @@
                         </a>
                         <div style="border-bottom: 1px solid; margin-bottom: 10px;" class="page-box__content">
                             <h4 class="page-box__title"><a href="{% url 'post' post.nameSlug %}">{{ post.name }}</a></h4>
+                            <p class="page-box__text"><i class="fa fa-calendar"></i> {{ post.created_at | date }}  | <i class="fa fa-eye"></i> {{ post.views }}</p>
                             <p class="page-box__text">
                                 {{ post.short_description }}
                             </p>
